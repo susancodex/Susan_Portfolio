@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalLink, Globe, Star, Trophy, GraduationCap, Menu, X } from "lucide-react";
+import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalLink, Globe, Star, Trophy, GraduationCap, Menu, X, Sun, Moon, Quote } from "lucide-react";
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
@@ -727,10 +727,27 @@ export default function Index() {
   const [typewriterText, setTypewriterText] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("about");
+  const [isDark, setIsDark] = useState(false);
   const { toast } = useToast();
 
   const fullText = "Susan Acharya";
   const navItems = ["about", "projects", "skills", "education", "contact"];
+
+  // Dark mode initialization & toggle
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const shouldBeDark = saved ? saved === "dark" : prefersDark;
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -837,23 +854,39 @@ export default function Index() {
                    </button>
                  );
                })}
-               <Button
-                 size="sm"
-                 className="btn-primary !px-5 !py-2 !text-sm ml-4"
-                 onClick={() => scrollToSection('contact')}
-               >
-                 Get in touch
-               </Button>
+                <button
+                  onClick={toggleTheme}
+                  aria-label="Toggle theme"
+                  className="ml-3 p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                >
+                  {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                </button>
+                <Button
+                  size="sm"
+                  className="btn-primary !px-5 !py-2 !text-sm ml-1"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  Get in touch
+                </Button>
              </div>
 
-             {/* Mobile Menu Button */}
-             <button
-               className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
-               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-               aria-label="Toggle menu"
-             >
-               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-             </button>
+              {/* Mobile actions */}
+              <div className="md:hidden flex items-center gap-1">
+                <button
+                  onClick={toggleTheme}
+                  aria-label="Toggle theme"
+                  className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                >
+                  {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                </button>
+                <button
+                  className="p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  aria-label="Toggle menu"
+                >
+                  {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
            </div>
 
            {/* Mobile Navigation */}
@@ -1033,7 +1066,39 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Tech Stack Strip */}
+      <section className="relative z-10 py-14 md:py-16 border-y border-border/40">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
+            Tools &amp; technologies I work with
+          </p>
+          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-10 md:gap-x-14 gap-y-6">
+            {[
+              { name: "Python", icon: "https://img.icons8.com/color/48/python--v1.png" },
+              { name: "Django", icon: "https://img.icons8.com/color/48/django.png" },
+              { name: "DRF", icon: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-shadow-tal-revivo.png" },
+              { name: "React", icon: "https://img.icons8.com/color/48/react-native.png" },
+              { name: "Vite", icon: "https://vitejs.dev/logo.svg" },
+              { name: "Tailwind", icon: "https://img.icons8.com/color/48/tailwind_css.png" },
+              { name: "MySQL", icon: "https://img.icons8.com/color/48/mysql-logo.png" },
+              { name: "PostgreSQL", icon: "https://img.icons8.com/color/48/postgreesql.png" },
+              { name: "Git", icon: "https://img.icons8.com/color/48/git.png" },
+            ].map((tech) => (
+              <div
+                key={tech.name}
+                className="group flex flex-col items-center gap-2 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                title={tech.name}
+              >
+                <img src={tech.icon} alt={tech.name} className="h-8 w-8 md:h-9 md:w-9 object-contain" />
+                <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground group-hover:text-foreground transition-colors">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -1077,7 +1142,65 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Testimonials Section */}
+      <section className="py-20 md:py-28 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center mb-5">
+            <span className="eyebrow">Recommendations</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-center mb-4">
+            What people say
+          </h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+            Kind words from peers, mentors, and collaborators I’ve had the chance to work with.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                quote:
+                  "Susan is a focused and reliable developer. He picks up new concepts quickly and writes clean, well-structured Django code.",
+                name: "Mentor",
+                role: "Senior Developer",
+                initials: "M",
+              },
+              {
+                quote:
+                  "Great teammate during our 48-hour hackathon. Calm under pressure, takes ownership, and delivers working features end to end.",
+                name: "Hackathon Teammate",
+                role: "Code Yantra · 2024",
+                initials: "HT",
+              },
+              {
+                quote:
+                  "His REST API designs are thoughtful and consistent. The Task Manager API he built is exactly what a real backend engineer would ship.",
+                name: "Peer Reviewer",
+                role: "BSc. CSIT, TU",
+                initials: "PR",
+              },
+            ].map((t) => (
+              <Card key={t.name} className="surface-card transition-all duration-500 hover:-translate-y-1">
+                <CardContent className="pt-6 pb-6 flex flex-col h-full">
+                  <Quote className="h-6 w-6 text-foreground/20 mb-4" />
+                  <p className="text-sm md:text-base text-foreground/85 leading-relaxed mb-6 flex-1">
+                    “{t.quote}”
+                  </p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-border/60">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-foreground text-background text-xs font-semibold tracking-tight">
+                      {t.initials}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-foreground">{t.name}</div>
+                      <div className="text-xs text-muted-foreground">{t.role}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
         <div className="container mx-auto px-4">
           <ContactSection handleContactSubmit={handleContactSubmit} />

@@ -109,7 +109,7 @@
    }
    
    html {
-     background: hsl(220 30% 98%);
+     background: hsl(var(--background));
      scroll-behavior: smooth;
    }
    
