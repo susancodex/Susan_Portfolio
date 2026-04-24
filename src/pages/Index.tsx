@@ -709,13 +709,15 @@ export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
   const [typewriterText, setTypewriterText] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("about");
   const { toast } = useToast();
-  
+
   const fullText = "Susan Acharya";
-  
+  const navItems = ["about", "projects", "skills", "education", "contact"];
+
   useEffect(() => {
     setIsVisible(true);
-    
+
     // Typewriter effect
     let currentIndex = 0;
     const typewriterInterval = setInterval(() => {
@@ -726,8 +728,29 @@ export default function Index() {
         clearInterval(typewriterInterval);
       }
     }, 100);
-    
+
     return () => clearInterval(typewriterInterval);
+  }, []);
+
+  // Active section tracking for nav highlighting
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    navItems.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleContactSubmit = (e: React.FormEvent) => {
