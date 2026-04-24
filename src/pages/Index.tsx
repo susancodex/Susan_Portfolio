@@ -417,14 +417,20 @@ const CertificatesSection = () => {
 
   return (
     <>
-      <h2 
+      <div className={`flex justify-center mb-5 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+        <span className="eyebrow">Credentials</span>
+      </div>
+      <h2
         ref={titleRef as any}
-        className={`text-4xl font-bold text-center mb-12 transition-all duration-1000 ${
+        className={`text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-center mb-4 transition-all duration-1000 ${
           titleVisible ? 'animate-fade-in-down opacity-100' : 'opacity-0 -translate-y-8'
         }`}
       >
-        📜 Certificates
+        Certificates
       </h2>
+      <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+        Continuous learning across Python, data, and software engineering fundamentals.
+      </p>
       
        <div ref={containerRef as any} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
          <Card className={`surface-card transition-all duration-500 hover:-translate-y-1 ${
@@ -616,14 +622,20 @@ const ContactSection = ({ handleContactSubmit }: { handleContactSubmit: (e: Reac
 
   return (
     <>
-      <h2 
+      <div className={`flex justify-center mb-5 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+        <span className="eyebrow">Contact</span>
+      </div>
+      <h2
         ref={titleRef as any}
-        className={`text-4xl font-bold text-center mb-12 transition-all duration-1000 ${
+        className={`text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-center mb-4 transition-all duration-1000 ${
           titleVisible ? 'animate-fade-in-down opacity-100' : 'opacity-0 -translate-y-8'
         }`}
       >
-        Get In Touch
+        Get in touch
       </h2>
+      <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+        Have a role, a project, or an idea you want to explore? I’d love to hear from you.
+      </p>
       
       <div ref={containerRef as any} className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
         {/* Contact Info */}
@@ -844,19 +856,25 @@ export default function Index() {
            </h1>
            
            {/* Title */}
-           <h2 className={`text-base md:text-lg font-normal text-muted-foreground mb-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+           <h2 className={`text-base md:text-lg font-normal text-muted-foreground mb-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
              Full-Stack Developer · <span className="text-foreground font-medium">Django</span> &amp; <span className="text-foreground font-medium">React</span>
            </h2>
 
-
-
+           {/* Credibility row */}
+           <div className={`flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8 text-xs text-muted-foreground transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+             <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Kathmandu, Nepal</span>
+             <span className="hidden sm:inline h-3 w-px bg-border"></span>
+             <span>BSc. CSIT · Tribhuvan University</span>
+             <span className="hidden sm:inline h-3 w-px bg-border"></span>
+             <span>Open to remote &amp; on-site roles</span>
+           </div>
 
 
            {/* Description */}
            <div className={`max-w-2xl mx-auto text-center mb-8 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Motivated developer building scalable and user-friendly web applications, with a focus on clean code and modern technologies.
-            </p>
+             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+               I design and build production-grade web applications with Django, Django REST Framework, and React — focusing on clean architecture, reliable APIs, and thoughtful user experience.
+             </p>
            </div>
 
            {/* CTA Buttons */}
@@ -972,15 +990,18 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-background/80 backdrop-blur-sm border-t border-border py-10 relative z-10">
+      <footer className="bg-background/80 backdrop-blur-sm border-t border-border py-8 relative z-10">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Susan Acharya. Crafted with care.
-          </p>
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/susancodex" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors"><Github className="h-4 w-4" /></a>
-            <a href="https://www.linkedin.com/in/susan-acharya1618" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors"><Linkedin className="h-4 w-4" /></a>
-            <a href="mailto:susanacharya.sp@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors"><Mail className="h-4 w-4" /></a>
+          <div className="flex items-center gap-2.5">
+            <span className="flex items-center justify-center h-7 w-7 rounded-md bg-foreground text-background text-[11px] font-semibold tracking-tight">SA</span>
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Susan Acharya · Built with React &amp; Tailwind CSS
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <a href="https://github.com/susancodex" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"><Github className="h-4 w-4" /></a>
+            <a href="https://www.linkedin.com/in/susan-acharya1618" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"><Linkedin className="h-4 w-4" /></a>
+            <a href="mailto:susanacharya.sp@gmail.com" aria-label="Email" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"><Mail className="h-4 w-4" /></a>
           </div>
         </div>
       </footer>
