@@ -854,21 +854,38 @@ export default function Index() {
                    </button>
                  );
                })}
-                <button
-                  onClick={toggleTheme}
-                  aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-                  title={`Switch to ${isDark ? "light" : "dark"} mode`}
-                  className="ml-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/70 transition-colors"
+                <div
+                  role="group"
+                  aria-label="Theme"
+                  className="ml-3 inline-flex items-center gap-0.5 p-0.5 rounded-full bg-muted/70 border border-border/70"
                 >
-                  <span className="inline-flex items-center gap-1.5 text-foreground">
-                    {isDark ? <Moon className="h-3.5 w-3.5" /> : <Sun className="h-3.5 w-3.5" />}
-                    <span className="capitalize">{isDark ? "Dark" : "Light"}</span>
-                  </span>
-                  <ChevronDown className="h-3 w-3 -rotate-90 opacity-60" />
-                  <span className="inline-flex items-center gap-1.5 opacity-70">
-                    {isDark ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
-                  </span>
-                </button>
+                  <button
+                    onClick={() => { if (isDark) toggleTheme(); }}
+                    aria-label="Light mode"
+                    aria-pressed={!isDark}
+                    title="Light mode"
+                    className={`flex items-center justify-center h-7 w-7 rounded-full transition-all duration-200 ${
+                      !isDark
+                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/60"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <Sun className="h-3.5 w-3.5" />
+                  </button>
+                  <button
+                    onClick={() => { if (!isDark) toggleTheme(); }}
+                    aria-label="Dark mode"
+                    aria-pressed={isDark}
+                    title="Dark mode"
+                    className={`flex items-center justify-center h-7 w-7 rounded-full transition-all duration-200 ${
+                      isDark
+                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/60"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <Moon className="h-3.5 w-3.5" />
+                  </button>
+                </div>
                 <Button
                   size="sm"
                   className="btn-primary !px-5 !py-2 !text-sm ml-1"
@@ -880,19 +897,36 @@ export default function Index() {
 
               {/* Mobile actions */}
               <div className="md:hidden flex items-center gap-1">
-                <button
-                  onClick={toggleTheme}
-                  aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-                  title={`Switch to ${isDark ? "light" : "dark"} mode`}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/70 transition-colors"
+                <div
+                  role="group"
+                  aria-label="Theme"
+                  className="inline-flex items-center gap-0.5 p-0.5 rounded-full bg-muted/70 border border-border/70"
                 >
-                  <span className="inline-flex items-center gap-1 text-foreground">
-                    {isDark ? <Moon className="h-3.5 w-3.5" /> : <Sun className="h-3.5 w-3.5" />}
-                    <span>{isDark ? "Dark" : "Light"}</span>
-                  </span>
-                  <ChevronDown className="h-3 w-3 -rotate-90 opacity-60" />
-                  {isDark ? <Sun className="h-3.5 w-3.5 opacity-70" /> : <Moon className="h-3.5 w-3.5 opacity-70" />}
-                </button>
+                  <button
+                    onClick={() => { if (isDark) toggleTheme(); }}
+                    aria-label="Light mode"
+                    aria-pressed={!isDark}
+                    className={`flex items-center justify-center h-7 w-7 rounded-full transition-all duration-200 ${
+                      !isDark
+                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/60"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    <Sun className="h-3.5 w-3.5" />
+                  </button>
+                  <button
+                    onClick={() => { if (!isDark) toggleTheme(); }}
+                    aria-label="Dark mode"
+                    aria-pressed={isDark}
+                    className={`flex items-center justify-center h-7 w-7 rounded-full transition-all duration-200 ${
+                      isDark
+                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/60"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    <Moon className="h-3.5 w-3.5" />
+                  </button>
+                </div>
                 <button
                   className="p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
