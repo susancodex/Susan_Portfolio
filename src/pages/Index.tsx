@@ -802,13 +802,13 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-transparent">
-       {/* Global Animated Bubble Background — fixed to viewport, behind every section */}
-       {/* Global subtle background — refined, professional, no playful bubbles */}
+       {/* Global subtle background — refined, professional, animated */}
        <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: -1 }}>
          <div className="absolute inset-0 hero-gradient"></div>
-         {/* Editorial dot grid */}
+
+         {/* Editorial dot grid with slow drift */}
          <div
-           className="absolute inset-0 opacity-[0.35]"
+           className="absolute inset-0 opacity-[0.35] animate-grid-drift"
            style={{
              backgroundImage: 'radial-gradient(hsl(222 47% 11% / 0.08) 1px, transparent 1px)',
              backgroundSize: '28px 28px',
@@ -816,9 +816,22 @@ export default function Index() {
              WebkitMaskImage: 'radial-gradient(ellipse at 50% 30%, black 40%, transparent 80%)',
            }}
          ></div>
-         {/* Soft accent orbs */}
-         <div className="absolute top-[8%] left-[6%] w-[28rem] h-[28rem] rounded-full bg-gradient-to-br from-primary/8 to-transparent blur-3xl"></div>
-         <div className="absolute bottom-[12%] right-[6%] w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-cyan))]/6 to-transparent blur-3xl"></div>
+
+         {/* Animated aurora orbs */}
+         <div className="absolute top-[8%] left-[6%] w-[28rem] h-[28rem] rounded-full bg-gradient-to-br from-primary/12 to-transparent blur-3xl animate-aurora-1"></div>
+         <div className="absolute bottom-[12%] right-[6%] w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-cyan))]/10 to-transparent blur-3xl animate-aurora-2"></div>
+         <div className="absolute top-[40%] left-[55%] w-[24rem] h-[24rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-purple))]/8 to-transparent blur-3xl animate-aurora-3"></div>
+
+         {/* Conic shimmer (very subtle) */}
+         <div
+           className="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[140vw] h-[140vw] opacity-[0.06] animate-spin-slow"
+           style={{
+             background:
+               'conic-gradient(from 0deg, transparent 0deg, hsl(var(--primary) / 0.6) 90deg, transparent 180deg, hsl(var(--accent-cyan) / 0.5) 270deg, transparent 360deg)',
+             maskImage: 'radial-gradient(circle at center, black 0%, transparent 55%)',
+             WebkitMaskImage: 'radial-gradient(circle at center, black 0%, transparent 55%)',
+           }}
+         ></div>
        </div>
 
        {/* Navigation */}
