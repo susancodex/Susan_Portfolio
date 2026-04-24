@@ -105,80 +105,98 @@ const FeaturedProjectsSection = () => {
         A selection of full-stack and backend projects that demonstrate clean architecture, REST API design, and production-ready UX.
       </p>
 
-       <div ref={containerRef as any} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
-           <div
-             key={project.title}
-             className={`group relative flex flex-col surface-card overflow-hidden ${
-               visibleItems[index] ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
-             }`}
-           >
-            {/* Project Image */}
-            <div className="relative overflow-hidden h-44 bg-muted border-b border-border/60">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="absolute top-3 left-3 inline-flex items-center justify-center h-7 min-w-7 px-2 rounded-full bg-background/90 backdrop-blur text-[11px] font-mono font-medium text-muted-foreground border border-border">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-            </div>
-
-            {/* Card Content */}
-            <div className="flex flex-col flex-1 p-5">
-              <h3 className="text-lg font-semibold tracking-tight mb-2 text-foreground">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1 line-clamp-4">
-                {project.description}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-[11px] px-2 py-0.5 rounded-md bg-muted text-muted-foreground border border-border/60 font-medium">
-                    {tag}
+       <div ref={containerRef as any} className="space-y-10 md:space-y-14 max-w-6xl mx-auto">
+        {projects.map((project, index) => {
+          const isReversed = index % 2 === 1;
+          return (
+            <article
+              key={project.title}
+              className={`group surface-card overflow-hidden grid grid-cols-1 md:grid-cols-2 ${
+                visibleItems[index] ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
+              }`}
+            >
+              {/* Image */}
+              <div className={`relative overflow-hidden h-56 md:h-auto md:min-h-[320px] bg-muted ${isReversed ? "md:order-2" : ""}`}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="absolute top-4 left-4 inline-flex items-center justify-center h-7 min-w-7 px-2 rounded-full bg-background/95 backdrop-blur text-[11px] font-mono font-medium text-foreground/80 border border-border">
+                  {String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+                </span>
+                {project.liveDemo && (
+                  <span className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/95 backdrop-blur text-[10px] font-semibold uppercase tracking-[0.14em] text-white shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse"></span>
+                    Live
                   </span>
-                ))}
+                )}
               </div>
 
-              {/* Buttons */}
-              <div className="flex gap-2 pt-3 border-t border-border/60">
-                {project.liveDemo ? (
+              {/* Content */}
+              <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    {project.tags[0]}
+                  </span>
+                  <span className="h-px flex-1 bg-border"></span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">
+                  {project.description}
+                </p>
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[11px] px-2.5 py-1 rounded-md bg-muted text-foreground/80 border border-border/60 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="flex flex-wrap gap-3 pt-4 border-t border-border/60">
+                  {project.liveDemo ? (
+                    <Button
+                      size="sm"
+                      className="btn-primary !px-5 !py-2 !text-xs"
+                      onClick={() => window.open(project.liveDemo!, "_blank")}
+                    >
+                      <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
+                      View Live Demo
+                    </Button>
+                  ) : (
+                    <Button
+                      size="sm"
+                      disabled
+                      variant="secondary"
+                      className="!px-5 !py-2 !text-xs rounded-lg cursor-not-allowed opacity-70"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
+                      Coming soon
+                    </Button>
+                  )}
                   <Button
+                    variant="outline"
                     size="sm"
-                    className="flex-1 h-9 text-xs btn-primary !rounded-lg !px-3 !py-0"
-                    onClick={() => window.open(project.liveDemo!, "_blank")}
+                    className="!px-5 !py-2 !text-xs rounded-lg border-border hover:border-foreground/40 hover:bg-muted"
+                    onClick={() => window.open(project.github, "_blank")}
                   >
-                    <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                    Live Demo
+                    <Github className="h-3.5 w-3.5 mr-1.5" />
+                    Source Code
                   </Button>
-                ) : (
-                  <Button
-                    size="sm"
-                    disabled
-                    variant="secondary"
-                    className="flex-1 h-9 text-xs rounded-lg cursor-not-allowed opacity-70"
-                  >
-                    <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                    Coming soon
-                  </Button>
-                )}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex-1 h-9 text-xs rounded-lg border-border hover:border-foreground/40 hover:bg-muted"
-                  onClick={() => window.open(project.github, "_blank")}
-                >
-                  <Github className="h-3.5 w-3.5 mr-1.5" />
-                  Source
-                </Button>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </>
   );
@@ -995,6 +1013,25 @@ export default function Index() {
            </div>
          </div>
        </section>
+
+      {/* Metrics Strip */}
+      <section className="relative z-10 -mt-8 mb-4">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/70 shadow-[var(--shadow-sm)]">
+            {[
+              { value: "4+", label: "Projects shipped" },
+              { value: "3", label: "Live deployments" },
+              { value: "4", label: "Certifications" },
+              { value: "48h", label: "Hackathon" },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-background/90 backdrop-blur-sm px-5 py-5 text-center">
+                <div className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">{stat.value}</div>
+                <div className="mt-1 text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
