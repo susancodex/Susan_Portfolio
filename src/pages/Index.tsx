@@ -146,20 +146,10 @@ const FeaturedProjectsSection = () => {
 
               {/* Buttons */}
               <div className="flex gap-2 pt-3 border-t border-border/60">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex-1 h-8 text-xs hover:bg-muted text-muted-foreground hover:text-foreground"
-                  onClick={() => window.open(project.github, "_blank")}
-                >
-                  <Github className="h-3.5 w-3.5 mr-1.5" />
-                  Code
-                </Button>
                 {project.liveDemo ? (
                   <Button
-                    variant="ghost"
                     size="sm"
-                    className="flex-1 h-8 text-xs hover:bg-muted text-foreground"
+                    className="flex-1 h-9 text-xs btn-primary !rounded-lg !px-3 !py-0"
                     onClick={() => window.open(project.liveDemo!, "_blank")}
                   >
                     <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
@@ -167,15 +157,24 @@ const FeaturedProjectsSection = () => {
                   </Button>
                 ) : (
                   <Button
-                    variant="ghost"
                     size="sm"
                     disabled
-                    className="flex-1 h-8 text-xs text-muted-foreground/60 cursor-default"
+                    variant="secondary"
+                    className="flex-1 h-9 text-xs rounded-lg cursor-not-allowed opacity-70"
                   >
                     <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                    Soon
+                    Coming soon
                   </Button>
                 )}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex-1 h-9 text-xs rounded-lg border-border hover:border-foreground/40 hover:bg-muted"
+                  onClick={() => window.open(project.github, "_blank")}
+                >
+                  <Github className="h-3.5 w-3.5 mr-1.5" />
+                  Source
+                </Button>
               </div>
             </div>
           </div>
@@ -788,59 +787,89 @@ export default function Index() {
        </div>
 
        {/* Navigation */}
-       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/75 backdrop-blur-xl border-b border-border/60">
+       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/60">
          <div className="container mx-auto px-4 py-3.5">
            <div className="flex justify-between items-center">
-             <button onClick={() => scrollToSection('about')} className="flex items-center gap-2 group">
+             <button onClick={() => scrollToSection('about')} className="flex items-center gap-2.5 group">
                <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-foreground text-background text-sm font-semibold tracking-tight">SA</span>
-               <span className="text-sm font-medium tracking-tight text-foreground/90 group-hover:text-foreground transition-colors">Susan Acharya</span>
+               <span className="hidden sm:flex flex-col leading-tight text-left">
+                 <span className="text-sm font-semibold tracking-tight text-foreground">Susan Acharya</span>
+                 <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Full-Stack Developer</span>
+               </span>
              </button>
-             
+
              {/* Desktop Navigation */}
-             <div className="hidden md:flex items-center gap-7">
-               {["about", "skills", "projects", "education", "contact"].map((item) => (
-                 <button
-                   key={item}
-                   onClick={() => scrollToSection(item)}
-                   className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 capitalize relative group"
-                 >
-                   {item}
-                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full"></span>
-                 </button>
-               ))}
+             <div className="hidden md:flex items-center gap-1">
+               {navItems.map((item) => {
+                 const isActive = activeSection === item;
+                 return (
+                   <button
+                     key={item}
+                     onClick={() => scrollToSection(item)}
+                     className={`relative px-3 py-2 text-sm capitalize transition-colors duration-300 ${
+                       isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                     }`}
+                   >
+                     {item}
+                     <span
+                       className={`absolute left-3 right-3 -bottom-0.5 h-px bg-foreground transition-all duration-300 ${
+                         isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                       }`}
+                     ></span>
+                   </button>
+                 );
+               })}
                <Button
                  size="sm"
-                 className="btn-primary !px-5 !py-2 !text-sm"
+                 className="btn-primary !px-5 !py-2 !text-sm ml-4"
                  onClick={() => scrollToSection('contact')}
                >
-                 Hire Me
+                 Get in touch
                </Button>
              </div>
-             
+
              {/* Mobile Menu Button */}
-             <button 
+             <button
                className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+               aria-label="Toggle menu"
              >
                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
              </button>
            </div>
-           
+
            {/* Mobile Navigation */}
            <div className={`md:hidden overflow-hidden transition-all duration-300 ${mobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-             <div className="flex flex-col gap-2 pb-4">
-               {["about", "skills", "projects", "education", "contact"].map((item) => (
-                 <button
-                   key={item}
-                   onClick={() => {
-                     scrollToSection(item);
-                     setMobileMenuOpen(false);
-                   }}
-                   className="text-left px-4 py-3 rounded-xl hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all duration-300 capitalize"
-                 >
-                   {item}
-                 </button>
-               ))}
+             <div className="flex flex-col gap-1 pb-4">
+               {navItems.map((item) => {
+                 const isActive = activeSection === item;
+                 return (
+                   <button
+                     key={item}
+                     onClick={() => {
+                       scrollToSection(item);
+                       setMobileMenuOpen(false);
+                     }}
+                     className={`text-left px-4 py-3 rounded-xl transition-all duration-300 capitalize text-sm ${
+                       isActive
+                         ? "bg-muted text-foreground font-medium"
+                         : "hover:bg-muted/50 text-muted-foreground hover:text-foreground"
+                     }`}
+                   >
+                     {item}
+                   </button>
+                 );
+               })}
+               <Button
+                 size="sm"
+                 className="btn-primary mt-2"
+                 onClick={() => {
+                   scrollToSection('contact');
+                   setMobileMenuOpen(false);
+                 }}
+               >
+                 Get in touch
+               </Button>
              </div>
            </div>
          </div>
@@ -864,14 +893,11 @@ export default function Index() {
              </div>
            </div>
            
-           {/* Name */}
+           {/* Status badge */}
            <div className={`mb-5 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium text-muted-foreground bg-background/80 backdrop-blur border border-border">
-               <span className="relative flex h-2 w-2">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-               </span>
-               Available for opportunities
+             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground bg-background/80 backdrop-blur border border-border">
+               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+               Available · {new Date().getFullYear()}
              </span>
            </div>
            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-3 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
