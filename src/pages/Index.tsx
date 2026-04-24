@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalLink, Globe, Star, Trophy, GraduationCap, Menu, X } from "lucide-react";
+import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalLink, Globe, Star, Trophy, GraduationCap, Menu, X, Sun, Moon, Quote } from "lucide-react";
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
@@ -727,10 +727,27 @@ export default function Index() {
   const [typewriterText, setTypewriterText] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("about");
+  const [isDark, setIsDark] = useState(false);
   const { toast } = useToast();
 
   const fullText = "Susan Acharya";
   const navItems = ["about", "projects", "skills", "education", "contact"];
+
+  // Dark mode initialization & toggle
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const shouldBeDark = saved ? saved === "dark" : prefersDark;
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   useEffect(() => {
     setIsVisible(true);
