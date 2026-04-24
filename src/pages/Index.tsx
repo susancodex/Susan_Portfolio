@@ -926,6 +926,15 @@ export default function Index() {
              </p>
            </div>
 
+           {/* Currently building */}
+           <div className={`mb-8 transition-all duration-1000 delay-[650ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs text-muted-foreground bg-muted/60 border border-border/70">
+               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70">Now</span>
+               <span className="h-3 w-px bg-border"></span>
+               <span>Building a Hospital Management System with Django REST &amp; React</span>
+             </div>
+           </div>
+
            {/* CTA Buttons */}
            <div className={`flex flex-wrap justify-center gap-3 mb-10 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
              <Button 
@@ -947,7 +956,7 @@ export default function Index() {
            </div>
 
            {/* Social Links */}
-           <div className={`flex justify-center gap-4 mb-8 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+           <div className={`flex justify-center gap-4 mb-10 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
              <a 
                href="https://github.com/susancodex" 
                target="_blank" 
