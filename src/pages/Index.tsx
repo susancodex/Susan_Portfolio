@@ -802,36 +802,28 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-transparent">
-       {/* Global subtle background — refined, professional, animated */}
-       <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: -1 }}>
+       {/* Global subtle background — refined, professional, fully responsive */}
+       <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: -1 }} aria-hidden="true">
          <div className="absolute inset-0 hero-gradient"></div>
 
-         {/* Editorial dot grid with slow drift */}
+         {/* Editorial dot grid with slow drift — finer on mobile, denser on desktop */}
          <div
-           className="absolute inset-0 opacity-[0.35] animate-grid-drift"
-           style={{
-             backgroundImage: 'radial-gradient(hsl(222 47% 11% / 0.08) 1px, transparent 1px)',
-             backgroundSize: '28px 28px',
-             maskImage: 'radial-gradient(ellipse at 50% 30%, black 40%, transparent 80%)',
-             WebkitMaskImage: 'radial-gradient(ellipse at 50% 30%, black 40%, transparent 80%)',
-           }}
+           className="absolute inset-0 opacity-[0.28] md:opacity-[0.35] animate-grid-drift bg-dot-grid"
          ></div>
 
-         {/* Animated aurora orbs */}
-         <div className="absolute top-[8%] left-[6%] w-[28rem] h-[28rem] rounded-full bg-gradient-to-br from-primary/12 to-transparent blur-3xl animate-aurora-1"></div>
-         <div className="absolute bottom-[12%] right-[6%] w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-cyan))]/10 to-transparent blur-3xl animate-aurora-2"></div>
-         <div className="absolute top-[40%] left-[55%] w-[24rem] h-[24rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-purple))]/8 to-transparent blur-3xl animate-aurora-3"></div>
+         {/* Animated aurora orbs — responsive sizes */}
+         <div className="absolute top-[6%] -left-[10%] md:top-[8%] md:left-[6%] w-[18rem] h-[18rem] md:w-[28rem] md:h-[28rem] lg:w-[34rem] lg:h-[34rem] rounded-full bg-gradient-to-br from-primary/10 md:from-primary/12 to-transparent blur-3xl animate-aurora-1"></div>
+         <div className="absolute bottom-[8%] -right-[10%] md:bottom-[12%] md:right-[6%] w-[20rem] h-[20rem] md:w-[32rem] md:h-[32rem] lg:w-[38rem] lg:h-[38rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-cyan))]/8 md:from-[hsl(var(--accent-cyan))]/10 to-transparent blur-3xl animate-aurora-2"></div>
+         <div className="hidden sm:block absolute top-[40%] left-[55%] w-[18rem] h-[18rem] md:w-[24rem] md:h-[24rem] lg:w-[28rem] lg:h-[28rem] rounded-full bg-gradient-to-br from-[hsl(var(--accent-purple))]/6 md:from-[hsl(var(--accent-purple))]/8 to-transparent blur-3xl animate-aurora-3"></div>
 
-         {/* Conic shimmer (very subtle) */}
+         {/* Conic shimmer (very subtle) — desktop only for performance */}
          <div
-           className="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[140vw] h-[140vw] opacity-[0.06] animate-spin-slow"
-           style={{
-             background:
-               'conic-gradient(from 0deg, transparent 0deg, hsl(var(--primary) / 0.6) 90deg, transparent 180deg, hsl(var(--accent-cyan) / 0.5) 270deg, transparent 360deg)',
-             maskImage: 'radial-gradient(circle at center, black 0%, transparent 55%)',
-             WebkitMaskImage: 'radial-gradient(circle at center, black 0%, transparent 55%)',
-           }}
+           className="hidden lg:block absolute -top-1/4 left-1/2 -translate-x-1/2 w-[140vw] h-[140vw] opacity-[0.05] animate-spin-slow bg-conic-shimmer"
          ></div>
+
+         {/* Top & bottom vignette for depth */}
+         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/60 to-transparent"></div>
+         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/60 to-transparent"></div>
        </div>
 
        {/* Navigation */}
