@@ -333,31 +333,55 @@
 
 /* Professional animated background keyframes */
 @keyframes aurora-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(60px, 40px) scale(1.1); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(40px, 30px, 0) scale(1.08); }
 }
 @keyframes aurora-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-50px, -30px) scale(1.08); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(-35px, -25px, 0) scale(1.06); }
 }
 @keyframes aurora-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-40px, 50px) scale(0.95); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(-30px, 35px, 0) scale(0.96); }
 }
 @keyframes grid-drift {
   0%   { background-position: 0 0; }
-  100% { background-position: 28px 28px; }
+  100% { background-position: 24px 24px; }
 }
 @keyframes spin-slow {
   from { transform: translateX(-50%) rotate(0deg); }
   to   { transform: translateX(-50%) rotate(360deg); }
 }
 
-.animate-aurora-1 { animation: aurora-1 18s ease-in-out infinite; }
-.animate-aurora-2 { animation: aurora-2 22s ease-in-out infinite; }
-.animate-aurora-3 { animation: aurora-3 26s ease-in-out infinite; }
-.animate-grid-drift { animation: grid-drift 30s linear infinite; }
-.animate-spin-slow { animation: spin-slow 80s linear infinite; }
+.animate-aurora-1 { animation: aurora-1 20s ease-in-out infinite; will-change: transform; }
+.animate-aurora-2 { animation: aurora-2 24s ease-in-out infinite; will-change: transform; }
+.animate-aurora-3 { animation: aurora-3 28s ease-in-out infinite; will-change: transform; }
+.animate-grid-drift { animation: grid-drift 40s linear infinite; }
+.animate-spin-slow { animation: spin-slow 90s linear infinite; will-change: transform; }
+
+/* Reusable animated background utilities */
+.bg-dot-grid {
+  background-image: radial-gradient(hsl(222 47% 11% / 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 35%, transparent 78%);
+          mask-image: radial-gradient(ellipse at 50% 30%, black 35%, transparent 78%);
+}
+@media (min-width: 768px) {
+  .bg-dot-grid { background-size: 28px 28px; }
+}
+
+.bg-conic-shimmer {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    hsl(var(--primary) / 0.5) 90deg,
+    transparent 180deg,
+    hsl(var(--accent-cyan) / 0.45) 270deg,
+    transparent 360deg
+  );
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 55%);
+          mask-image: radial-gradient(circle at center, black 0%, transparent 55%);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .animate-aurora-1,
