@@ -856,10 +856,18 @@ export default function Index() {
                })}
                 <button
                   onClick={toggleTheme}
-                  aria-label="Toggle theme"
-                  className="ml-3 p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                  aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+                  title={`Switch to ${isDark ? "light" : "dark"} mode`}
+                  className="ml-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/70 transition-colors"
                 >
-                  {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                  <span className="inline-flex items-center gap-1.5 text-foreground">
+                    {isDark ? <Moon className="h-3.5 w-3.5" /> : <Sun className="h-3.5 w-3.5" />}
+                    <span className="capitalize">{isDark ? "Dark" : "Light"}</span>
+                  </span>
+                  <ChevronDown className="h-3 w-3 -rotate-90 opacity-60" />
+                  <span className="inline-flex items-center gap-1.5 opacity-70">
+                    {isDark ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+                  </span>
                 </button>
                 <Button
                   size="sm"
@@ -874,10 +882,16 @@ export default function Index() {
               <div className="md:hidden flex items-center gap-1">
                 <button
                   onClick={toggleTheme}
-                  aria-label="Toggle theme"
-                  className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                  aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+                  title={`Switch to ${isDark ? "light" : "dark"} mode`}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/70 transition-colors"
                 >
-                  {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                  <span className="inline-flex items-center gap-1 text-foreground">
+                    {isDark ? <Moon className="h-3.5 w-3.5" /> : <Sun className="h-3.5 w-3.5" />}
+                    <span>{isDark ? "Dark" : "Light"}</span>
+                  </span>
+                  <ChevronDown className="h-3 w-3 -rotate-90 opacity-60" />
+                  {isDark ? <Sun className="h-3.5 w-3.5 opacity-70" /> : <Moon className="h-3.5 w-3.5 opacity-70" />}
                 </button>
                 <button
                   className="p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
