@@ -1,0 +1,81 @@
+Update the **Featured Projects** section of my portfolio website.
+
+First, **remove all existing featured projects completely**.
+
+Then add these **3 new featured projects** with a clean modern card layout.
+
+Each project card must contain:
+
+* Project image/banner generated based on the project theme
+* Project title
+* Short description
+* Clickable **GitHub** button/link
+* Clickable **Live Demo** button/link (if available)
+* Modern hover animation
+* Responsive design for mobile and desktop
+* Consistent professional portfolio styling
+
+---
+
+## Project 1: Finance Tracker
+
+**Title:** Finance Tracker
+
+**Description:**
+A full-stack personal finance management web application built with React + Vite (frontend) and Django REST Framework (backend). Track income and expenses, manage categories, set monthly budget limits, and work toward financial goals — all from a clean, mobile-friendly interface.
+
+**GitHub Link:**
+https://github.com/susancodex/Finance_Tracker.git
+
+**Live Demo:**
+https://finance-tracker-frontend-zeid.onrender.com
+
+**Image Prompt:**
+Create a modern finance dashboard style banner image showing charts, income vs expenses graph, wallet icons, dollar symbols, clean analytics UI, blue and white professional theme, laptop screen style illustration.
+
+---
+
+## Project 2: Task Manager API
+
+**Title:** Task Manager API
+
+**Description:**
+A RESTful API built with Django REST Framework for task creation, management, authentication, and status tracking with clean backend architecture.
+
+**GitHub Link:**
+https://github.com/susancodex/task-manager-api.git
+
+**Live Demo:**
+https://task-manager-api-x87n.onrender.com
+
+**Image Prompt:**
+Generate a modern backend developer themed image with API endpoints, JSON response boxes, task checklist icons, server/database illustration, dark professional coding dashboard theme.
+
+---
+
+## Project 3: To Do List
+
+**Title:** To Do List
+
+**Description:**
+A simple, user-authenticated To-Do List web application built with Django. Users can register, log in, and manage their personal tasks with a clean and responsive interface.
+
+**GitHub Link:**
+https://github.com/susancodex/todo-list.git
+
+**Image Prompt:**
+Generate a clean task list UI illustration with checkboxes, completed tasks, notebook style layout, soft minimal colors, productivity theme.
+
+---
+
+## Design Requirements
+
+* Use modern portfolio card design
+* Rounded corners
+* Shadow hover effect
+* Smooth transition animations
+* Professional typography
+* Buttons should be clickable
+* Add “View Code” and “Live Demo” buttons
+* Keep layout elegant and recruiter-friendly
+* Maintain consistent spacing and alignment
