@@ -3,6 +3,7 @@ import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalL
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
+import smartCampusImg from "@/assets/smart-campus-management.jpg";
 import hospitalManagementImg from "@/assets/hospital-management-system.svg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
