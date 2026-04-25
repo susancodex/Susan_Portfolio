@@ -3,6 +3,7 @@ import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalL
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
+import smartCampusImg from "@/assets/smart-campus-management.jpg";
 import hospitalManagementImg from "@/assets/hospital-management-system.svg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -50,15 +51,24 @@ const FeaturedProjectsSection = () => {
   const [containerRef, visibleItems] = useStaggerAnimation(3, 200);
 
    const projects = [
-     {
-       image: financeTrackerImg,
-       title: "Finance Tracker",
-       description:
-         "A full-stack personal finance management web application built with React + Vite (frontend) and Django REST Framework (backend). Track income and expenses, manage categories, set monthly budget limits, and work toward financial goals — all from a clean, mobile-friendly interface.",
-       github: "https://github.com/susancodex/Finance_Tracker.git",
-       liveDemo: "https://finance-tracker-frontend-zeid.onrender.com",
-       tags: ["React", "Vite", "Django REST", "Full-Stack"],
-     },
+      {
+        image: smartCampusImg,
+        title: "Smart Campus Management System",
+        description:
+          "A modern campus management platform that streamlines student enrollment, course scheduling, attendance tracking, and academic records. Features role-based authentication for students, faculty, and admins, real-time dashboards, and a clean, responsive UI built for everyday campus operations.",
+        github: "https://github.com/susancodex/remix-of-smart-campus-management-system.git",
+        liveDemo: "https://campus-zenith-49.lovable.app/auth",
+        tags: ["React", "TypeScript", "Auth", "Dashboard"],
+      },
+      {
+        image: financeTrackerImg,
+        title: "Finance Tracker",
+        description:
+          "A full-stack personal finance management web application built with React + Vite (frontend) and Django REST Framework (backend). Track income and expenses, manage categories, set monthly budget limits, and work toward financial goals — all from a clean, mobile-friendly interface.",
+        github: "https://github.com/susancodex/Finance_Tracker.git",
+        liveDemo: "https://finance-tracker-frontend-zeid.onrender.com",
+        tags: ["React", "Vite", "Django REST", "Full-Stack"],
+      },
      {
        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800&h=400",
        title: "Hospital Management System",
