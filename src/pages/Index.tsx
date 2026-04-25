@@ -75,7 +75,7 @@ const FeaturedProjectsSection = () => {
        description:
          "Comprehensive healthcare management platform featuring patient records, appointment scheduling, doctor management, billing system, and admin dashboard. Built with Django REST Framework backend and React frontend with role-based authentication.",
        github: "https://github.com/susancodex/Hospital_Management_System.git",
-       liveDemo: null,
+       liveDemo: "https://hospital-management-system-frontend-hsbj.onrender.com",
        tags: ["Django", "React", "REST API", "Healthcare"],
      },
      {
