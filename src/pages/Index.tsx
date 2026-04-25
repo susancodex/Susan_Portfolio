@@ -57,7 +57,7 @@ const FeaturedProjectsSection = () => {
         description:
           "A modern campus management platform that streamlines student enrollment, course scheduling, attendance tracking, and academic records. Features role-based authentication for students, faculty, and admins, real-time dashboards, and a clean, responsive UI built for everyday campus operations.",
         github: "https://github.com/susancodex/remix-of-smart-campus-management-system.git",
-        liveDemo: "https://campus-zenith-49.lovable.app/auth",
+        liveDemo: "https://campus-zenith-49.lovable.app",
         tags: ["React", "TypeScript", "Auth", "Dashboard"],
       },
       {
