@@ -3,7 +3,7 @@ import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalL
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
-import smartCampusImg from "@/assets/smart-campus-management.jpg";
+
 import hospitalManagementImg from "@/assets/hospital-management-system.svg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -48,18 +48,9 @@ const AboutSection = () => {
 // Featured Projects Section Component
 const FeaturedProjectsSection = () => {
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-  const [containerRef, visibleItems] = useStaggerAnimation(5, 200);
+   const [containerRef, visibleItems] = useStaggerAnimation(4, 200);
 
-   const projects = [
-      {
-        image: smartCampusImg,
-        title: "Smart Campus Management System",
-        description:
-          "A modern campus management platform that streamlines student enrollment, course scheduling, attendance tracking, and academic records. Features role-based authentication for students, faculty, and admins, real-time dashboards, and a clean, responsive UI built for everyday campus operations.",
-        github: "https://github.com/susancodex/remix-of-smart-campus-management-system.git",
-        liveDemo: "https://campus-zenith-49.lovable.app",
-        tags: ["React", "TypeScript", "Auth", "Dashboard"],
-      },
+    const projects = [
       {
         image: financeTrackerImg,
         title: "Finance Tracker",
