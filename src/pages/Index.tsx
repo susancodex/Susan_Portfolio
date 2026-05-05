@@ -3,7 +3,7 @@ import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalL
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import smartStudyPlannerImg from "@/assets/smart-study-planner.jpg";
-import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
+
 
 import hospitalManagementImg from "@/assets/hospital-management-system.svg";
 import { Button } from "@/components/ui/button";
@@ -49,7 +49,7 @@ const AboutSection = () => {
 // Featured Projects Section Component
 const FeaturedProjectsSection = () => {
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-   const [containerRef, visibleItems] = useStaggerAnimation(5, 200);
+   const [containerRef, visibleItems] = useStaggerAnimation(4, 200);
 
     const projects = [
       {
@@ -87,15 +87,6 @@ const FeaturedProjectsSection = () => {
         github: "https://github.com/susancodex/smart_study_planner.git",
         liveDemo: "https://smart-study-planner-zvxj.onrender.com/api/docs/",
         tags: ["Django REST", "Python", "API", "Education"],
-      },
-     {
-        image: todoListImg,
-        title: "To Do List",
-        description:
-          "A simple, user-authenticated To-Do List web application built with Django. Users can register, log in, and manage their personal tasks with a clean and responsive interface.",
-        github: "https://github.com/susancodex/todo-list.git",
-        liveDemo: null,
-        tags: ["Django", "Python", "Authentication", "Web App"],
       },
     ];
 
@@ -1116,7 +1107,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/70 shadow-[var(--shadow-sm)]">
             {[
-              { value: "5+", label: "Projects shipped" },
+              { value: "4+", label: "Projects shipped" },
               { value: "4", label: "Live deployments" },
               { value: "4", label: "Certifications" },
               { value: "48h", label: "Hackathon" },
