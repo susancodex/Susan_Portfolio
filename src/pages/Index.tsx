@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalLink, Globe, Star, Trophy, GraduationCap, Menu, X, Sun, Moon, Quote } from "lucide-react";
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
+import smartStudyPlannerImg from "@/assets/smart-study-planner.jpg";
 import todoListImg from "@/assets/enhanced-todo-list-project.jpg";
 
 import hospitalManagementImg from "@/assets/hospital-management-system.svg";
