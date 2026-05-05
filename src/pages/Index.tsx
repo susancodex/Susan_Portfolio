@@ -1116,8 +1116,8 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/70 shadow-[var(--shadow-sm)]">
             {[
-              { value: "4+", label: "Projects shipped" },
-              { value: "3", label: "Live deployments" },
+              { value: "5+", label: "Projects shipped" },
+              { value: "4", label: "Live deployments" },
               { value: "4", label: "Certifications" },
               { value: "48h", label: "Hackathon" },
             ].map((stat) => (
