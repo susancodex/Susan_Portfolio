@@ -88,15 +88,6 @@ const FeaturedProjectsSection = () => {
         liveDemo: "https://smart-study-planner-zvxj.onrender.com/api/docs/",
         tags: ["Django REST", "Python", "API", "Education"],
       },
-     {
-        image: todoListImg,
-        title: "To Do List",
-        description:
-          "A simple, user-authenticated To-Do List web application built with Django. Users can register, log in, and manage their personal tasks with a clean and responsive interface.",
-        github: "https://github.com/susancodex/todo-list.git",
-        liveDemo: null,
-        tags: ["Django", "Python", "Authentication", "Web App"],
-      },
     ];
 
   return (
