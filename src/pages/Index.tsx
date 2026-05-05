@@ -49,7 +49,7 @@ const AboutSection = () => {
 // Featured Projects Section Component
 const FeaturedProjectsSection = () => {
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-   const [containerRef, visibleItems] = useStaggerAnimation(4, 200);
+   const [containerRef, visibleItems] = useStaggerAnimation(5, 200);
 
     const projects = [
       {
