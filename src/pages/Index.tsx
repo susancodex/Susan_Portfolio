@@ -76,19 +76,28 @@ const FeaturedProjectsSection = () => {
        description:
          "A RESTful API built with Django REST Framework for task creation, management, authentication, and status tracking with clean backend architecture.",
        github: "https://github.com/susancodex/task-manager-api.git",
-       liveDemo: "https://task-manager-api-x87n.onrender.com",
-       tags: ["Django REST", "Python", "API", "Backend"],
-     },
+        liveDemo: "https://task-manager-api-sg3y.onrender.com",
+        tags: ["Django REST", "Python", "API", "Backend"],
+      },
      {
-       image: todoListImg,
-       title: "To Do List",
-       description:
-         "A simple, user-authenticated To-Do List web application built with Django. Users can register, log in, and manage their personal tasks with a clean and responsive interface.",
-       github: "https://github.com/susancodex/todo-list.git",
-       liveDemo: null,
-       tags: ["Django", "Python", "Authentication", "Web App"],
-     },
-   ];
+        image: smartStudyPlannerImg,
+        title: "Smart Study Planner",
+        description:
+          "An intelligent study planning API built with Django REST Framework. Features subject management, study session scheduling, progress tracking, and smart recommendations to help students organize their learning efficiently with a well-documented API interface.",
+        github: "https://github.com/susancodex/smart_study_planner.git",
+        liveDemo: "https://smart-study-planner-zvxj.onrender.com/api/docs/",
+        tags: ["Django REST", "Python", "API", "Education"],
+      },
+     {
+        image: todoListImg,
+        title: "To Do List",
+        description:
+          "A simple, user-authenticated To-Do List web application built with Django. Users can register, log in, and manage their personal tasks with a clean and responsive interface.",
+        github: "https://github.com/susancodex/todo-list.git",
+        liveDemo: null,
+        tags: ["Django", "Python", "Authentication", "Web App"],
+      },
+    ];
 
   return (
     <>
