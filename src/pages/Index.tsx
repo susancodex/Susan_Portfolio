@@ -839,7 +839,7 @@ export default function Index() {
        </div>
 
        {/* Navigation */}
-       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/60">
+       <nav className="fixed top-0 left-0 right-0 z-50 navbar-glass bg-background/80 backdrop-blur-xl border-b border-border/60">
          <div className="container mx-auto px-4 py-3.5">
            <div className="flex justify-between items-center">
              <button onClick={() => scrollToSection('about')} className="flex items-center gap-2.5 group">
@@ -852,25 +852,20 @@ export default function Index() {
 
              {/* Desktop Navigation */}
              <div className="hidden md:flex items-center gap-1">
-               {navItems.map((item) => {
-                 const isActive = activeSection === item;
-                 return (
-                   <button
-                     key={item}
-                     onClick={() => scrollToSection(item)}
-                     className={`relative px-3 py-2 text-sm capitalize transition-colors duration-300 ${
-                       isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                     }`}
-                   >
-                     {item}
-                     <span
-                       className={`absolute left-3 right-3 -bottom-0.5 h-px bg-foreground transition-all duration-300 ${
-                         isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-                       }`}
-                     ></span>
-                   </button>
-                 );
-               })}
+                {navItems.map((item) => {
+                  const isActive = activeSection === item;
+                  return (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(item)}
+                      className={`nav-link relative px-3 py-2 text-sm capitalize rounded-lg hover:bg-muted/40 ${
+                        isActive ? "text-foreground nav-link-active bg-muted/50" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
                 <div
                   role="group"
                   aria-label="Theme"
