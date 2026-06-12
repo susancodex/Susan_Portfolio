@@ -3,6 +3,7 @@ import { ChevronDown, Mail, Phone, MapPin, Github, Linkedin, Download, ExternalL
 import financeTrackerImg from "@/assets/finance-tracker-project.jpg";
 import taskManagerImg from "@/assets/task-manager-api.png";
 import smartStudyPlannerImg from "@/assets/smart-study-planner.jpg";
+import brainPilotAiImg from "@/assets/brain-pilot-ai.jpg";
 
 
 import hospitalManagementImg from "@/assets/hospital-management-system.svg";
@@ -49,9 +50,18 @@ const AboutSection = () => {
 // Featured Projects Section Component
 const FeaturedProjectsSection = () => {
   const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-   const [containerRef, visibleItems] = useStaggerAnimation(4, 200);
+   const [containerRef, visibleItems] = useStaggerAnimation(5, 200);
 
     const projects = [
+      {
+        image: brainPilotAiImg,
+        title: "Brain Pilot AI",
+        description:
+          "A modern full-stack educational platform designed to boost student productivity and learning. Integrates AI-powered tutoring, personalized study planning, intelligent note management, flashcard generation, quiz creation, revision scheduling, and learning analytics into a single application. Built with React, Vite, TypeScript, Django REST Framework, and PostgreSQL — emphasizing clean architecture, scalability, responsive design, and secure AI integration.",
+        github: "https://github.com/susancodex/BrainPilot-AI.git",
+        liveDemo: "https://github.com/susancodex/BrainPilot-AI.git",
+        tags: ["React", "Vite", "TypeScript", "Django REST", "PostgreSQL", "AI"],
+      },
       {
         image: financeTrackerImg,
         title: "Finance Tracker",
@@ -1037,7 +1047,7 @@ export default function Index() {
              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs text-muted-foreground bg-muted/60 border border-border/70">
                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70">Now</span>
                <span className="h-3 w-px bg-border"></span>
-               <span>Building a Hospital Management System with Django REST &amp; React</span>
+               <span>Building Brain Pilot AI — an AI-powered learning platform with Django REST &amp; React</span>
              </div>
            </div>
 
@@ -1107,7 +1117,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/70 shadow-[var(--shadow-sm)]">
             {[
-              { value: "4+", label: "Projects shipped" },
+              { value: "5+", label: "Projects shipped" },
               { value: "4", label: "Live deployments" },
               { value: "4", label: "Certifications" },
               { value: "48h", label: "Hackathon" },
