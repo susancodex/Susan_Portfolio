@@ -852,25 +852,20 @@ export default function Index() {
 
              {/* Desktop Navigation */}
              <div className="hidden md:flex items-center gap-1">
-               {navItems.map((item) => {
-                 const isActive = activeSection === item;
-                 return (
-                   <button
-                     key={item}
-                     onClick={() => scrollToSection(item)}
-                     className={`relative px-3 py-2 text-sm capitalize transition-colors duration-300 ${
-                       isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                     }`}
-                   >
-                     {item}
-                     <span
-                       className={`absolute left-3 right-3 -bottom-0.5 h-px bg-foreground transition-all duration-300 ${
-                         isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-                       }`}
-                     ></span>
-                   </button>
-                 );
-               })}
+                {navItems.map((item) => {
+                  const isActive = activeSection === item;
+                  return (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(item)}
+                      className={`nav-link relative px-3 py-2 text-sm capitalize rounded-lg hover:bg-muted/40 ${
+                        isActive ? "text-foreground nav-link-active bg-muted/50" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
                 <div
                   role="group"
                   aria-label="Theme"
