@@ -5,10 +5,10 @@ import { scrollToSection } from "@/lib/scroll";
 import { SOCIAL_LINKS } from "@/constants/portfolio";
 
 const ROLES = [
-  "Frontend Developer",
-  "React Developer",
-  "Computer Science Student",
+  "Computer Science",
   "Full Stack Developer",
+  "API Architect",
+  "Django · DRF",
 ];
 
 function useRoleCycler(roles: string[], intervalMs = 2600) {
