@@ -1,19 +1,42 @@
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SKILL_CATEGORIES } from "@/constants/portfolio";
 
-const SKILL_DELAY_CLASSES = [
-  "",
-  "[animation-delay:100ms]",
-  "[animation-delay:200ms]",
-  "[animation-delay:300ms]",
-  "[animation-delay:400ms]",
-  "[animation-delay:500ms]",
-];
+const CATEGORY_META: Record<string, { accent: string; bar: string; emoji: string }> = {
+  "Programming & Frontend": {
+    accent: "group-hover:border-blue-400/50",
+    bar: "from-blue-400 to-cyan-400",
+    emoji: "⚡",
+  },
+  "Backend": {
+    accent: "group-hover:border-emerald-400/50",
+    bar: "from-emerald-400 to-teal-400",
+    emoji: "🛠️",
+  },
+  "Databases": {
+    accent: "group-hover:border-violet-400/50",
+    bar: "from-violet-400 to-purple-400",
+    emoji: "🗄️",
+  },
+  "Concepts": {
+    accent: "group-hover:border-amber-400/50",
+    bar: "from-amber-400 to-orange-400",
+    emoji: "💡",
+  },
+  "Tools": {
+    accent: "group-hover:border-cyan-400/50",
+    bar: "from-cyan-400 to-sky-400",
+    emoji: "🔧",
+  },
+  "Soft Skills": {
+    accent: "group-hover:border-pink-400/50",
+    bar: "from-pink-400 to-rose-400",
+    emoji: "🌟",
+  },
+};
 
 export default function SkillsSection() {
   const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>({ threshold: 0.3 });
-  const [containerRef, visibleItems] = useStaggerAnimation(SKILL_CATEGORIES.length, 200);
+  const [containerRef, visibleItems] = useStaggerAnimation(SKILL_CATEGORIES.length, 120);
 
   return (
     <>
@@ -38,58 +61,74 @@ export default function SkillsSection() {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
       >
-        {SKILL_CATEGORIES.map((category, index) => (
-          <Card
-            key={category.title}
-            className={`surface-card border-border/70 transition-all duration-500 hover:-translate-y-1 ${
-              visibleItems[index]
-                ? "animate-fade-in-up opacity-100"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <CardHeader className="pb-3 border-b border-border/60">
-              <CardTitle className="text-sm font-semibold tracking-tight uppercase text-foreground">
-                {category.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pt-5">
-              <ul className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <li
+        {SKILL_CATEGORIES.map((category, index) => {
+          const meta = CATEGORY_META[category.title] ?? {
+            accent: "group-hover:border-foreground/20",
+            bar: "from-foreground/40 to-foreground/20",
+            emoji: "📦",
+          };
+
+          return (
+            <div
+              key={category.title}
+              className={`group relative flex flex-col rounded-2xl border border-border/70 bg-background/70 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] ${meta.accent} ${
+                visibleItems[index]
+                  ? "animate-fade-in-up opacity-100"
+                  : "opacity-0 translate-y-8"
+              }`}
+            >
+              {/* Colored accent bar */}
+              <div
+                className={`h-0.5 w-full bg-gradient-to-r ${meta.bar} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
+                aria-hidden="true"
+              />
+
+              {/* Card header */}
+              <div className="flex items-center gap-3 px-5 pt-5 pb-4 border-b border-border/50">
+                <span
+                  className="flex items-center justify-center h-9 w-9 rounded-xl bg-muted/80 border border-border/60 text-lg flex-shrink-0"
+                  aria-hidden="true"
+                >
+                  {meta.emoji}
+                </span>
+                <h3 className="text-sm font-semibold tracking-tight text-foreground">
+                  {category.title}
+                </h3>
+              </div>
+
+              {/* Skill chips */}
+              <div className="flex flex-wrap gap-2 p-5">
+                {category.skills.map((skill) => (
+                  <span
                     key={skill.name}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/70 transition-colors duration-200 ${
-                      visibleItems[index] ? "animate-fade-in" : "opacity-0"
-                    } ${
-                      SKILL_DELAY_CLASSES[skillIndex] ??
-                      SKILL_DELAY_CLASSES[SKILL_DELAY_CLASSES.length - 1]
-                    }`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/60 border border-border/50 hover:border-border hover:bg-muted transition-all duration-200 group/chip cursor-default"
                   >
                     {skill.icon.startsWith("http") ? (
                       <img
                         src={skill.icon}
                         alt=""
                         aria-hidden="true"
-                        className="w-6 h-6 object-contain"
+                        className="w-4 h-4 object-contain flex-shrink-0"
                         onError={(e) => {
                           (e.currentTarget as HTMLImageElement).style.display = "none";
                         }}
                       />
                     ) : (
-                      <span className="text-lg" aria-hidden="true">
+                      <span className="text-sm leading-none flex-shrink-0" aria-hidden="true">
                         {skill.icon}
                       </span>
                     )}
-                    <span className="text-sm font-medium text-foreground/90">
+                    <span className="text-xs font-medium text-foreground/85 group-hover/chip:text-foreground transition-colors whitespace-nowrap">
                       {skill.name}
                     </span>
-                  </li>
+                  </span>
                 ))}
-              </ul>
-            </CardContent>
-          </Card>
-        ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );

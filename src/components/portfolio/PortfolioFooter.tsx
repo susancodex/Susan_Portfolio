@@ -13,8 +13,7 @@ export default function PortfolioFooter() {
             SA
           </span>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Susan Acharya &middot; Built with React &amp;
-            Tailwind CSS
+            &copy; {new Date().getFullYear()} Susan Acharya
           </p>
         </div>
         <nav aria-label="Footer social links" className="flex items-center gap-2">
