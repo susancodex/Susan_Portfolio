@@ -13,18 +13,21 @@ const CONTACT_ITEMS = [
     label: "Email",
     value: SOCIAL_LINKS.email,
     href: `mailto:${SOCIAL_LINKS.email}`,
+    iconClass: "bg-blue-500/10 border-blue-500/20 text-blue-500 group-hover:bg-blue-500 group-hover:text-white group-hover:border-blue-500",
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+977 9824562967",
     href: "tel:+9779824562967",
+    iconClass: "bg-emerald-500/10 border-emerald-500/20 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Kathmandu, Nepal",
     href: null,
+    iconClass: "bg-amber-500/10 border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500",
   },
 ] as const;
 
@@ -81,10 +84,10 @@ export default function ContactSection() {
           </p>
 
           <address className="not-italic space-y-1">
-            {CONTACT_ITEMS.map(({ icon: Icon, label, value, href }) => {
+            {CONTACT_ITEMS.map(({ icon: Icon, label, value, href, iconClass }) => {
               const inner = (
                 <>
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-muted border border-border group-hover:bg-foreground group-hover:text-background transition-colors">
+                  <div className={`flex items-center justify-center h-10 w-10 rounded-lg border transition-all duration-300 ${iconClass}`}>
                     <Icon className="h-4 w-4" aria-hidden="true" />
                   </div>
                   <div className="flex-1">

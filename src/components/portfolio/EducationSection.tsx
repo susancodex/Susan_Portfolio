@@ -41,7 +41,7 @@ export default function EducationSection() {
           <CardHeader className="border-b border-border/60">
             <div className="flex items-start gap-4">
               <div
-                className="flex-shrink-0 h-12 w-12 rounded-xl bg-foreground text-background flex items-center justify-center"
+                className="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center shadow-sm"
                 aria-hidden="true"
               >
                 <GraduationCap className="h-6 w-6" />
@@ -77,10 +77,10 @@ export default function EducationSection() {
                   {CORE_SUBJECTS.map((subject) => (
                     <li
                       key={subject}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/40 border border-border/60 hover:bg-muted hover:border-foreground/20 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/40 border border-border/60 hover:bg-muted hover:border-primary/20 transition-colors"
                     >
                       <span
-                        className="h-1 w-1 rounded-full bg-muted-foreground flex-shrink-0"
+                        className="h-1.5 w-1.5 rounded-full bg-primary/60 flex-shrink-0"
                         aria-hidden="true"
                       />
                       <span className="text-xs font-medium text-foreground/90">{subject}</span>

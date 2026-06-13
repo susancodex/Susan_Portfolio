@@ -6,21 +6,33 @@ const HIGHLIGHTS = [
     icon: Code2,
     label: "Django & DRF",
     desc: "Production-grade REST APIs with JWT auth, serializers & viewsets",
+    iconClass: "bg-blue-500/10 border-blue-500/20 text-blue-500",
+    hoverIconClass: "group-hover:bg-blue-500/15 group-hover:border-blue-500/30 group-hover:text-blue-500",
+    glowClass: "from-blue-500/[0.06]",
   },
   {
     icon: Globe,
     label: "React + TypeScript",
     desc: "Responsive SPAs built with Vite, Tailwind, and React Query",
+    iconClass: "bg-cyan-500/10 border-cyan-500/20 text-cyan-500",
+    hoverIconClass: "group-hover:bg-cyan-500/15 group-hover:border-cyan-500/30 group-hover:text-cyan-500",
+    glowClass: "from-cyan-500/[0.06]",
   },
   {
     icon: Database,
     label: "Databases",
     desc: "PostgreSQL & MySQL — schema design, migrations, and optimisation",
+    iconClass: "bg-violet-500/10 border-violet-500/20 text-violet-500",
+    hoverIconClass: "group-hover:bg-violet-500/15 group-hover:border-violet-500/30 group-hover:text-violet-500",
+    glowClass: "from-violet-500/[0.06]",
   },
   {
     icon: Layers,
     label: "Full-Stack",
     desc: "End-to-end delivery from API design through to deployed UI",
+    iconClass: "bg-emerald-500/10 border-emerald-500/20 text-emerald-500",
+    hoverIconClass: "group-hover:bg-emerald-500/15 group-hover:border-emerald-500/30 group-hover:text-emerald-500",
+    glowClass: "from-emerald-500/[0.06]",
   },
 ];
 
@@ -79,22 +91,19 @@ export default function AboutSection() {
         ref={cardsRef}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
       >
-        {HIGHLIGHTS.map(({ icon: Icon, label, desc }, i) => (
+        {HIGHLIGHTS.map(({ icon: Icon, label, desc, iconClass, hoverIconClass, glowClass }, i) => (
           <div
             key={label}
-            className={`group relative p-5 rounded-2xl border border-border/70 bg-background/60 backdrop-blur-sm hover:border-primary/30 hover:bg-muted/30 text-left transition-all duration-300 hover:-translate-y-0.5 overflow-hidden ${
+            className={`group relative p-5 rounded-2xl border border-border/70 bg-background/60 backdrop-blur-sm hover:border-border hover:bg-muted/30 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-md)] overflow-hidden ${
               visibleItems[i] ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-6"
             }`}
           >
             <div
-              className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              className={`absolute inset-0 bg-gradient-to-br ${glowClass} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               aria-hidden="true"
             />
-            <div className="flex items-center justify-center h-9 w-9 rounded-xl bg-foreground/[0.06] border border-border/60 mb-3 group-hover:bg-primary/10 group-hover:border-primary/20 transition-colors duration-300">
-              <Icon
-                className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors duration-300"
-                aria-hidden="true"
-              />
+            <div className={`flex items-center justify-center h-9 w-9 rounded-xl border mb-3 transition-all duration-300 ${iconClass} ${hoverIconClass}`}>
+              <Icon className="h-4 w-4 transition-colors duration-300" aria-hidden="true" />
             </div>
             <div className="text-sm font-semibold text-foreground tracking-tight mb-1">
               {label}

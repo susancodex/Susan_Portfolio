@@ -100,7 +100,7 @@ export default function HeroSection() {
           }`}
         >
           <span
-            className={`text-lg md:text-xl font-medium text-foreground transition-all duration-300 ${
+            className={`text-lg md:text-xl font-semibold text-primary transition-all duration-300 ${
               roleVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
             }`}
           >

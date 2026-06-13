@@ -62,11 +62,11 @@ export default function CertificatesSection() {
             <CardHeader>
               <div className="flex items-center justify-between mb-3">
                 <span className="eyebrow !text-[10px]">{cert.issuer}</span>
-                <span className="font-mono text-xs text-muted-foreground">{cert.index}</span>
+                <span className="font-mono text-xs font-semibold text-primary/70">{cert.index}</span>
               </div>
               <CardTitle className="text-base font-semibold tracking-tight leading-snug flex items-center gap-2">
                 {cert.index === "04" && (
-                  <Trophy className="h-4 w-4 text-foreground/60 flex-shrink-0" aria-hidden="true" />
+                  <Trophy className="h-4 w-4 text-amber-500 flex-shrink-0" aria-hidden="true" />
                 )}
                 {cert.title}
               </CardTitle>
