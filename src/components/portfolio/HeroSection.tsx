@@ -5,7 +5,7 @@ import { scrollToSection } from "@/lib/scroll";
 import { SOCIAL_LINKS } from "@/constants/portfolio";
 
 const ROLES = [
-  "Computer Science",
+  "Computer Science Professional",
   "Full Stack Developer",
   "API Architect",
   "Django & DRF",
