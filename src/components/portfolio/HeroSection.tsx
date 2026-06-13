@@ -86,7 +86,7 @@ export default function HeroSection() {
 
         {/* Name — animated gradient */}
         <h1
-          className={`text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.03em] mb-4 transition-all duration-1000 [transition-delay:200ms] ${
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.03em] mb-4 transition-all duration-1000 [transition-delay:200ms] ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -110,7 +110,7 @@ export default function HeroSection() {
 
         {/* Meta row */}
         <div
-          className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 mb-7 text-xs text-muted-foreground transition-all duration-700 [transition-delay:380ms] ${
+          className={`flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-7 text-xs text-muted-foreground transition-all duration-700 [transition-delay:380ms] ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -119,9 +119,10 @@ export default function HeroSection() {
             Kathmandu, Nepal
           </span>
           <span className="hidden sm:block h-3 w-px bg-border" aria-hidden="true" />
-          <span>BSc. CSIT · Tribhuvan University</span>
+          <span className="hidden sm:inline">BSc. CSIT · Tribhuvan University</span>
           <span className="hidden sm:block h-3 w-px bg-border" aria-hidden="true" />
-          <span>Open to remote &amp; on-site roles</span>
+          <span className="hidden sm:inline">Open to remote &amp; on-site roles</span>
+          <span className="sm:hidden text-center leading-relaxed">BSc. CSIT · Open to remote &amp; on-site</span>
         </div>
 
         {/* Description */}
@@ -210,7 +211,7 @@ export default function HeroSection() {
 
         {/* Code card — centered below socials */}
         <div
-          className={`w-full max-w-sm mx-auto mb-12 transition-all duration-1000 [transition-delay:700ms] ${
+          className={`w-full max-w-xs sm:max-w-sm mx-auto mb-12 transition-all duration-1000 [transition-delay:700ms] ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

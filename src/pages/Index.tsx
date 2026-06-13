@@ -41,49 +41,49 @@ export default function Index() {
         <MetricsStrip />
         <TechStackStrip />
 
-        <section id="about" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
+        <section id="about" className="py-14 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
           <div className="container mx-auto px-4">
             <AboutSection />
           </div>
         </section>
 
-        <section id="projects" className="py-20 md:py-28 relative z-10">
+        <section id="projects" className="py-14 md:py-28 relative z-10">
           <div className="container mx-auto px-4">
             <ProjectsSection />
           </div>
         </section>
 
-        <section id="skills" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
+        <section id="skills" className="py-14 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
           <div className="container mx-auto px-4">
             <SkillsSection />
           </div>
         </section>
 
-        <section id="education" className="py-20 md:py-28 relative z-10">
+        <section id="education" className="py-14 md:py-28 relative z-10">
           <div className="container mx-auto px-4">
             <EducationSection />
           </div>
         </section>
 
-        <section className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10" aria-label="Certificates">
+        <section className="py-14 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10" aria-label="Certificates">
           <div className="container mx-auto px-4">
             <CertificatesSection />
           </div>
         </section>
 
-        <section className="py-20 md:py-28 relative z-10" aria-label="Languages and achievements">
+        <section className="py-14 md:py-28 relative z-10" aria-label="Languages and achievements">
           <div className="container mx-auto px-4">
             <LanguagesSection />
           </div>
         </section>
 
-        <section className="py-20 md:py-28 relative z-10" aria-label="Testimonials">
+        <section className="py-14 md:py-28 relative z-10" aria-label="Testimonials">
           <div className="container mx-auto px-4">
             <TestimonialsSection />
           </div>
         </section>
 
-        <section id="contact" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
+        <section id="contact" className="py-14 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
           <div className="container mx-auto px-4">
             <ContactSection />
           </div>

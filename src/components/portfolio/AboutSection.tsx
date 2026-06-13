@@ -78,7 +78,7 @@ export default function AboutSection() {
       {/* Highlight cards — 4-column centered grid */}
       <div
         ref={cardsRef}
-        className="grid grid-cols-2 md:grid-cols-4 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
       >
         {HIGHLIGHTS.map(({ icon: Icon, label, desc }, i) => (
           <div

@@ -4,8 +4,8 @@ import { SOCIAL_LINKS } from "@/constants/portfolio";
 export default function PortfolioFooter() {
   return (
     <footer className="bg-background/80 backdrop-blur-sm border-t border-border py-8 relative z-10">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2.5">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div className="flex items-center gap-2.5 justify-center md:justify-start">
           <span
             className="flex items-center justify-center h-7 w-7 rounded-md bg-foreground text-background text-[11px] font-semibold tracking-tight"
             aria-hidden="true"

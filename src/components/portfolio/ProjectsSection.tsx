@@ -106,11 +106,11 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-wrap gap-3 pt-4 border-t border-border/60">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-border/60">
                   {project.liveDemo ? (
                     <Button
                       size="sm"
-                      className="btn-primary !px-4 !py-2 !text-xs group/btn"
+                      className="btn-primary !px-4 !py-2 !text-xs group/btn flex-1 sm:flex-none"
                       onClick={() => window.open(project.liveDemo!, "_blank")}
                     >
                       <ExternalLink className="h-3.5 w-3.5 mr-1.5" aria-hidden="true" />
@@ -122,7 +122,7 @@ export default function ProjectsSection() {
                       size="sm"
                       disabled
                       variant="secondary"
-                      className="!px-4 !py-2 !text-xs rounded-lg opacity-60 cursor-not-allowed"
+                      className="!px-4 !py-2 !text-xs rounded-lg opacity-60 cursor-not-allowed flex-1 sm:flex-none"
                     >
                       Coming Soon
                     </Button>
@@ -130,7 +130,7 @@ export default function ProjectsSection() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="!px-4 !py-2 !text-xs rounded-lg border-border hover:border-foreground/30 hover:bg-muted transition-all duration-200"
+                    className="!px-4 !py-2 !text-xs rounded-lg border-border hover:border-foreground/30 hover:bg-muted transition-all duration-200 flex-1 sm:flex-none"
                     onClick={() => window.open(project.github, "_blank")}
                     aria-label={`View ${project.title} on GitHub`}
                   >
