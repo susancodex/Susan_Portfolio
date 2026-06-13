@@ -22,9 +22,7 @@ const App = () => (
       <LanguageProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter
-          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-        >
+        <BrowserRouter>
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<Index />} />

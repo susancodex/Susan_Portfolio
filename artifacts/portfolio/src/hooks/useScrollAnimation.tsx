@@ -40,11 +40,11 @@ export const useScrollAnimation = <T extends Element = Element>(
   return [ref, isVisible] as const;
 };
 
-export const useStaggerAnimation = (itemsCount: number, delay = 100) => {
+export const useStaggerAnimation = <T extends HTMLElement = HTMLDivElement>(itemsCount: number, delay = 100) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(
     new Array(itemsCount).fill(false)
   );
-  const [containerRef, isContainerVisible] = useScrollAnimation();
+  const [containerRef, isContainerVisible] = useScrollAnimation<T>();
 
   useEffect(() => {
     if (!isContainerVisible) return;

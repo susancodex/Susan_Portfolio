@@ -1,0 +1,43 @@
+21:54:23.390 
+artifacts/portfolio typecheck:       Type 'Element' is missing the following properties from type 'HTMLDivElement': align, accessKey, accessKeyLabel, autocapitalize, and 130 more.
+21:54:23.390 
+artifacts/portfolio typecheck: src/components/portfolio/SkillsSection.tsx(63,9): error TS2322: Type 'RefObject<Element | null>' is not assignable to type 'Ref<HTMLDivElement> | undefined'.
+21:54:23.390 
+artifacts/portfolio typecheck:   Type 'RefObject<Element | null>' is not assignable to type 'RefObject<HTMLDivElement | null>'.
+21:54:23.390 
+artifacts/portfolio typecheck:     Type 'Element | null' is not assignable to type 'HTMLDivElement | null'.
+21:54:23.390 
+artifacts/portfolio typecheck:       Type 'Element' is missing the following properties from type 'HTMLDivElement': align, accessKey, accessKeyLabel, autocapitalize, and 130 more.
+21:54:23.391 
+artifacts/portfolio typecheck: src/components/portfolio/TestimonialsSection.tsx(38,9): error TS2322: Type 'RefObject<Element | null>' is not assignable to type 'Ref<HTMLDivElement> | undefined'.
+21:54:23.392 
+artifacts/portfolio typecheck:   Type 'RefObject<Element | null>' is not assignable to type 'RefObject<HTMLDivElement | null>'.
+21:54:23.392 
+artifacts/portfolio typecheck:     Type 'Element | null' is not assignable to type 'HTMLDivElement | null'.
+21:54:23.392 
+artifacts/portfolio typecheck:       Type 'Element' is missing the following properties from type 'HTMLDivElement': align, accessKey, accessKeyLabel, autocapitalize, and 130 more.
+21:54:23.392 
+artifacts/portfolio typecheck: src/components/ui/calendar.tsx(55,9): error TS2353: Object literal may only specify known properties, and 'IconLeft' does not exist in type 'Partial<CustomComponents>'.
+21:54:23.392 
+artifacts/portfolio typecheck: src/pages/Contact.tsx(285,22): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ checkInOut: { question: string; answer: string; }; parking: { question: string; answer: string; }; pets: { question: string; answer: string; }; breakfast: { question: string; answer: string; }; transfers: { ...; }; amenities: { ...; }; }'.
+21:54:23.392 
+artifacts/portfolio typecheck:   No index signature with a parameter of type 'string' was found on type '{ checkInOut: { question: string; answer: string; }; parking: { question: string; answer: string; }; pets: { question: string; answer: string; }; breakfast: { question: string; answer: string; }; transfers: { ...; }; amenities: { ...; }; }'.
+21:54:23.392 
+artifacts/portfolio typecheck: src/pages/Contact.tsx(288,22): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ checkInOut: { question: string; answer: string; }; parking: { question: string; answer: string; }; pets: { question: string; answer: string; }; breakfast: { question: string; answer: string; }; transfers: { ...; }; amenities: { ...; }; }'.
+21:54:23.392 
+artifacts/portfolio typecheck:   No index signature with a parameter of type 'string' was found on type '{ checkInOut: { question: string; answer: string; }; parking: { question: string; answer: string; }; pets: { question: string; answer: string; }; breakfast: { question: string; answer: string; }; transfers: { ...; }; amenities: { ...; }; }'.
+21:54:23.410 
+artifacts/portfolio typecheck: Failed
+21:54:23.429 
+/vercel/path0/artifacts/portfolio:
+21:54:23.429 
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/portfolio@0.0.0 typecheck: `tsc -p tsconfig.json --noEmit`
+21:54:23.429 
+Exit status 2
+21:54:23.465 
+ ELIFECYCLE  Command failed with exit code 2.
+21:54:23.502 
+ ELIFECYCLE  Command failed with exit code 2.
+21:54:23.525 
+Error: Command "pnpm run build" exited with 2
+Deployment Summary
