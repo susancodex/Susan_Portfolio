@@ -71,19 +71,28 @@ export default function AboutSection() {
           textVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
         }`}
       >
-        Motivated developer with hands-on experience building scalable and user-friendly web
-        applications. Skilled in RESTful API design, modern web technologies, and responsive
-        design. Strong problem solver and collaborative team player with a focus on writing
-        clean and efficient code.
+        Susan Acharya is a professional Computer Science student from Tribhuvan University,
+        specialising in modern software development and web technologies. A motivated and
+        detail-oriented developer with hands-on experience in building scalable, responsive,
+        and user-friendly web applications.
       </p>
       <p
-        className={`text-base leading-relaxed text-muted-foreground mb-12 transition-all duration-1000 delay-100 ${
+        className={`text-base leading-relaxed text-muted-foreground mb-4 transition-all duration-1000 delay-100 ${
           textVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
         }`}
       >
-        Final year BSc. CSIT student at Tribhuvan University, seeking opportunities to
-        contribute, learn, and grow as a developer — ideally in a team that values
-        craftsmanship and code quality.
+        He has a strong understanding of RESTful API design, full-stack development, and
+        responsive UI/UX principles — focused on writing clean, efficient, and maintainable
+        code while continuously improving his problem-solving and system design skills.
+      </p>
+      <p
+        className={`text-base leading-relaxed text-muted-foreground mb-12 transition-all duration-1000 delay-200 ${
+          textVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
+        }`}
+      >
+        As a final-year BSc. CSIT student, Susan is passionate about applying computer science
+        concepts to real-world projects and is currently seeking opportunities to grow as a
+        software developer in a professional engineering environment.
       </p>
 
       {/* Highlight cards — 4-column centered grid */}

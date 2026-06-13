@@ -5,10 +5,10 @@ import { scrollToSection } from "@/lib/scroll";
 import { SOCIAL_LINKS } from "@/constants/portfolio";
 
 const ROLES = [
-  "Full-Stack Developer",
+  "Full Stack Developer",
+  "Computer Science Student",
   "Django REST Expert",
   "React Engineer",
-  "API Architect",
 ];
 
 function useRoleCycler(roles: string[], intervalMs = 2600) {
@@ -71,7 +71,7 @@ export default function HeroSection() {
             <div className="relative w-full h-full rounded-full overflow-hidden shadow-[var(--shadow-lg)]">
               <img
                 src="/profile.png"
-                alt="Susan Acharya"
+                alt="Susan Acharya profile photo"
                 className="w-full h-full object-cover"
                 width={192}
                 height={192}
@@ -144,10 +144,10 @@ export default function HeroSection() {
           }`}
         >
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            I design and build production-grade web applications with{" "}
-            <strong className="text-foreground font-medium">Django REST Framework</strong> and{" "}
-            <strong className="text-foreground font-medium">React</strong> — focused on clean
-            architecture, reliable APIs, and thoughtful user experience.
+            A motivated Full Stack Developer and final-year{" "}
+            <strong className="text-foreground font-medium">BSc. CSIT student</strong> from{" "}
+            <strong className="text-foreground font-medium">Tribhuvan University, Nepal</strong> — building scalable web applications with{" "}
+            Django REST Framework and React, with a focus on clean architecture and thoughtful user experience.
           </p>
         </div>
 

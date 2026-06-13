@@ -1,0 +1,180 @@
+You are a Senior Frontend Engineer, SEO Specialist, and Technical Architect.
+
+Your task is to audit, refactor, and upgrade my personal portfolio into a production-grade, SEO-optimized, high-performance personal brand website.
+
+PRIMARY BRAND TARGET:
+Susan Acharya
+
+PRIMARY DOMAIN:
+https://www.susanacharya1.com.np
+
+PROFILE IMAGE:
+Use the provided profile image as the official hero/profile avatar of the website. Optimize it for performance (compress, lazy-load, proper alt text: "Susan Acharya profile photo").
+
+---
+
+## 🎯 SEO GOAL (WHITE-HAT ONLY)
+
+Optimize the website so it can rank organically for:
+
+- Susan Acharya
+- Susan Acharya portfolio
+- Susan Acharya developer
+- React developer Nepal
+- Frontend developer Nepal
+- Full-stack developer portfolio
+- Computer Science student Nepal
+
+IMPORTANT:
+- Use only white-hat SEO techniques
+- No keyword stuffing
+- No fake backlinks
+- No cloaking or hidden text
+- No spam or manipulative ranking tricks
+
+---
+
+## 🌐 HOMEPAGE HERO CONTENT (CRITICAL SEO SECTION)
+
+The homepage must prominently display:
+
+TITLE:
+Susan Acharya
+
+PROFESSION:
+Full Stack Developer | Computer Science Student
+
+LOCATION:
+Nepal / Kathmandu
+
+---
+
+## 🧠 PROFESSIONAL INTRO (USE EXACTLY THIS)
+
+Susan Acharya is a professional Computer Science student from Tribhuvan University, specializing in modern software development and web technologies. He is a motivated and detail-oriented developer with hands-on experience in building scalable, responsive, and user-friendly web applications.
+
+He has a strong understanding of RESTful API design, full-stack development, and responsive UI/UX principles. His focus is on writing clean, efficient, and maintainable code while continuously improving his problem-solving and system design skills.
+
+As a final-year BSc. CSIT student, Susan is passionate about applying computer science concepts to real-world projects. He enjoys collaborating in team environments, learning new technologies, and contributing to high-quality software products that emphasize performance, usability, and craftsmanship.
+
+He is currently seeking opportunities to grow as a software developer and contribute to impactful projects in a professional engineering environment.
+
+---
+
+## ⚙️ TECHNICAL SEO REQUIREMENTS
+
+- Add proper meta title + description for all pages
+- Add Open Graph tags (og:title, og:image, og:url, og:description)
+- Add Twitter Card metadata
+- Add canonical URL: https://www.susanacharya1.com.np
+- Create sitemap.xml
+- Create robots.txt
+- Ensure all pages are indexable
+
+Clean URL structure:
+/
+/about
+/projects
+/contact
+/blog
+
+---
+
+## 📈 STRUCTURED DATA (VERY IMPORTANT)
+
+Add JSON-LD:
+
+- Person schema for "Susan Acharya"
+- Website schema
+- CreativeWork schema for projects
+
+Include:
+- name: Susan Acharya
+- url: https://www.susanacharya1.com.np
+- jobTitle: Full Stack Developer
+- sameAs: GitHub, LinkedIn, etc.
+- description: professional bio above
+
+---
+
+## 🚀 PERFORMANCE OPTIMIZATION
+
+- React code splitting (lazy loading)
+- Image optimization (WebP/AVIF)
+- Reduce bundle size
+- Remove unused dependencies
+- Remove console logs and dead code
+- Improve Lighthouse score (90+ target)
+- Optimize Core Web Vitals (LCP, FCP, CLS)
+
+---
+
+## 🎨 UI / UX REQUIREMENTS
+
+- Modern developer portfolio design
+- Clean typography and spacing
+- Smooth animations (subtle, not heavy)
+- Fully responsive (mobile-first)
+- Professional SaaS-style UI
+- Dark mode + light mode support
+
+---
+
+## 🧱 CODE QUALITY
+
+- Strict TypeScript (avoid "any")
+- Reusable components
+- Clean folder structure:
+  src/
+    components/
+    pages/
+    sections/
+    hooks/
+    utils/
+    assets/
+    types/
+
+- Remove unused imports
+- Remove comments from production code
+- No AI-generated signatures or artifacts
+
+---
+
+## 🔍 SEO CONTENT STRUCTURE
+
+Homepage must include:
+
+- H1: Susan Acharya
+- Subtitle: Full Stack Developer
+- Short SEO bio
+- Skills section (React, TypeScript, Django, Node.js)
+- Projects section with descriptions
+- Contact section with email and social links
+
+---
+
+## 📱 SOCIAL PREVIEW OPTIMIZATION
+
+- Open Graph image must use profile image professionally
+- Ensure link preview looks perfect on:
+  - Google
+  - WhatsApp
+  - LinkedIn
+  - Twitter/X
+
+---
+
+## 🧭 FINAL OUTPUT
+
+The final website must be:
+
+- Fully production-ready
+- SEO optimized for personal brand ranking
+- Fast and scalable
+- Accessible and semantic
+- Cleanly structured like a senior engineer built it
+- Fully deployed-ready at https://www.susanacharya1.com.np
+
+No AI traces, no generator fingerprints, no template artifacts.
+
+The goal is strong organic ranking for "Susan Acharya" and developer-related keywords through legitimate SEO optimization.
