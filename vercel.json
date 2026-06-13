@@ -3,6 +3,7 @@
   "outputDirectory": "artifacts/portfolio/dist",
   "installCommand": "pnpm install",
   "framework": null,
+  "engines": { "node": "20.x" },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
