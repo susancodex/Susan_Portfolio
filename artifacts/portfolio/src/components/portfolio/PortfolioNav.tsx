@@ -11,8 +11,7 @@ export default function PortfolioNav() {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-    const shouldBeDark = saved ? saved === "dark" : prefersDark;
+    const shouldBeDark = saved ? saved === "dark" : false;
     setIsDark(shouldBeDark);
     document.documentElement.classList.toggle("dark", shouldBeDark);
   }, []);
