@@ -209,15 +209,6 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* Code card — centered below socials */}
-        <div
-          className={`w-full max-w-xs sm:max-w-sm mx-auto mb-12 transition-all duration-1000 [transition-delay:700ms] ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <CodeCard />
-        </div>
-
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-gentle">
           <button
@@ -231,55 +222,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function CodeCard() {
-  return (
-    <div className="rounded-2xl border border-border/70 bg-background/80 backdrop-blur-sm shadow-[var(--shadow-md)] overflow-hidden text-left">
-      {/* Terminal bar */}
-      <div className="flex items-center gap-1.5 px-4 py-3 bg-muted/60 border-b border-border/60">
-        <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" aria-hidden="true" />
-        <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/80" aria-hidden="true" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" aria-hidden="true" />
-        <span className="ml-2 text-[11px] font-mono text-muted-foreground">developer.ts</span>
-      </div>
-      {/* Code */}
-      <pre className="px-5 py-4 text-[12px] font-mono leading-relaxed overflow-x-auto">
-        <code>
-          <span className="text-muted-foreground">{"// Currently building\n"}</span>
-          <span className="text-blue-500 dark:text-blue-400">{"const "}</span>
-          <span className="text-foreground">{"developer"}</span>
-          <span className="text-muted-foreground">{" = {"}</span>{"\n"}
-          {"  "}
-          <span className="text-cyan-600 dark:text-cyan-400">{"stack"}</span>
-          <span className="text-muted-foreground">:{" ["}</span>
-          <span className="text-emerald-600 dark:text-emerald-400">{'"Django"'}</span>
-          <span className="text-muted-foreground">{", "}</span>
-          <span className="text-emerald-600 dark:text-emerald-400">{'"React"'}</span>
-          <span className="text-muted-foreground">{", "}</span>
-          <span className="text-emerald-600 dark:text-emerald-400">{'"PostgreSQL"'}</span>
-          <span className="text-muted-foreground">{"],"}</span>{"\n"}
-          {"  "}
-          <span className="text-cyan-600 dark:text-cyan-400">{"project"}</span>
-          <span className="text-muted-foreground">{": "}</span>
-          <span className="text-emerald-600 dark:text-emerald-400">{'"Brain Pilot AI"'}</span>
-          <span className="text-muted-foreground">{","}</span>{"\n"}
-          {"  "}
-          <span className="text-cyan-600 dark:text-cyan-400">{"status"}</span>
-          <span className="text-muted-foreground">{":  "}</span>
-          <span className="text-emerald-600 dark:text-emerald-400">{'"available"'}</span>{"\n"}
-          <span className="text-muted-foreground">{"};"}</span>
-        </code>
-      </pre>
-      {/* Status bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-t border-border/60 bg-muted/30">
-        <span className="flex items-center gap-1.5 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-          Ready to collaborate
-        </span>
-        <span className="text-[11px] font-mono text-muted-foreground">Ln 6, Col 1</span>
-      </div>
-    </div>
   );
 }
