@@ -7,6 +7,7 @@ import { SOCIAL_LINKS } from "@/constants/portfolio";
 const ROLES = [
   "Computer Science Professional",
   "Full Stack Developer",
+  "React & Django Developer",
   "API Architect",
   "Django & DRF",
   "React",
