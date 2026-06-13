@@ -121,9 +121,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Concepts",
     skills: [
-      { name: "Software Requirements Analysis", icon: "" },
-      { name: "Unit Testing", icon: "" },
-      { name: "System Design Basics", icon: "" },
+      { name: "Software Requirements Analysis", icon: "📝" },
+      { name: "Unit Testing", icon: "✅" },
+      { name: "System Design Basics", icon: "🏗️" },
     ],
   },
   {
