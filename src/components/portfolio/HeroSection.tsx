@@ -8,9 +8,6 @@ const ROLES = [
   "Computer Science Professional",
   "Full Stack Developer",
   "React & Django Developer",
-  "API Architect",
-  "Django & DRF",
-  "React",
 ];
 
 function useRoleCycler(roles: string[], intervalMs = 2600) {
