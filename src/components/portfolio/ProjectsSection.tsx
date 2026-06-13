@@ -64,7 +64,7 @@ export default function ProjectsSection() {
                   aria-hidden="true"
                 />
                 {/* Index badge */}
-                <span className="absolute top-3 left-3 inline-flex items-center justify-center h-6 min-w-[2rem] px-2 rounded-md bg-background/90 backdrop-blur text-[10px] font-mono font-semibold text-foreground/70 border border-border/60">
+                <span className="absolute top-3 left-3 inline-flex items-center justify-center h-6 min-w-[2rem] px-2 rounded-md bg-background/90 backdrop-blur text-[10px] font-mono font-bold text-primary border border-primary/20">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {/* Live badge */}
@@ -86,7 +86,7 @@ export default function ProjectsSection() {
                   <span className="h-px flex-1 bg-border/60" aria-hidden="true" />
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">
@@ -95,10 +95,14 @@ export default function ProjectsSection() {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-6" aria-label="Technologies used">
-                  {project.tags.map((tag) => (
+                  {project.tags.map((tag, ti) => (
                     <span
                       key={tag}
-                      className="text-[11px] px-2.5 py-1 rounded-md bg-muted/80 text-foreground/75 border border-border/50 font-medium hover:border-primary/30 hover:text-primary transition-colors duration-200"
+                      className={`text-[11px] px-2.5 py-1 rounded-md font-medium border transition-colors duration-200 hover:border-primary/40 hover:text-primary ${
+                        ti === 0
+                          ? "bg-primary/8 border-primary/20 text-primary"
+                          : "bg-muted/80 text-foreground/70 border-border/50"
+                      }`}
                     >
                       {tag}
                     </span>

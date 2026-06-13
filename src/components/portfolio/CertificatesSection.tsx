@@ -78,12 +78,12 @@ export default function CertificatesSection() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="w-full justify-between hover:bg-muted text-foreground border border-border"
+                className="w-full justify-between hover:bg-primary/5 hover:text-primary hover:border-primary/30 text-foreground/80 border border-border/80 transition-all duration-200 group/btn"
                 onClick={() => window.open(cert.linkUrl, "_blank")}
                 aria-label={`${cert.linkLabel} for ${cert.title}`}
               >
                 <span className="text-xs font-medium">{cert.linkLabel}</span>
-                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                <ExternalLink className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" aria-hidden="true" />
               </Button>
             </CardContent>
           </Card>

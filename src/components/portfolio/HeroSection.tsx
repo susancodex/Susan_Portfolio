@@ -52,11 +52,23 @@ export default function HeroSection() {
           }`}
         >
           <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-8">
+            {/* Soft outer glow */}
             <div
-              className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary/40 via-[hsl(var(--accent-cyan))]/30 to-[hsl(var(--accent-purple))]/40 blur-md animate-aurora-1"
+              className="absolute -inset-4 rounded-full bg-gradient-to-tr from-primary/20 via-[hsl(var(--accent-cyan))]/15 to-[hsl(var(--accent-purple))]/20 blur-2xl animate-aurora-1"
               aria-hidden="true"
             />
-            <div className="relative w-full h-full rounded-full overflow-hidden ring-1 ring-border/60 bg-background shadow-[var(--shadow-lg)]">
+            {/* Gradient ring border */}
+            <div
+              className="absolute -inset-[3px] rounded-full bg-gradient-to-tr from-primary/80 via-[hsl(var(--accent-cyan))]/60 to-[hsl(var(--accent-purple))]/80"
+              aria-hidden="true"
+            />
+            {/* White gap ring */}
+            <div
+              className="absolute -inset-[1px] rounded-full bg-background"
+              aria-hidden="true"
+            />
+            {/* Photo */}
+            <div className="relative w-full h-full rounded-full overflow-hidden shadow-[var(--shadow-lg)]">
               <img
                 src="/profile.png"
                 alt="Susan Acharya"
@@ -90,7 +102,7 @@ export default function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-foreground">Susan Acharya</span>
+          <span className="text-foreground font-bold">Susan Acharya</span>
         </h1>
 
         {/* Rotating role */}

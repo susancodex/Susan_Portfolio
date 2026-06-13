@@ -52,9 +52,12 @@ export default function EducationSection() {
                 </CardTitle>
                 <CardDescription className="text-sm mt-2 flex flex-wrap items-center gap-2">
                   <span>Bhaktapur Multiple Campus, Tribhuvan University (IOST)</span>
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 text-xs font-medium border border-emerald-500/20">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-medium border border-emerald-500/20">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
                     Currently Pursuing
+                  </span>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-muted text-[11px] font-medium text-muted-foreground border border-border/70">
+                    2022 – Present
                   </span>
                 </CardDescription>
               </div>

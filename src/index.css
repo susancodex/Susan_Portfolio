@@ -296,11 +296,22 @@
    }
 
    .eyebrow {
-     @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground bg-muted border border-border/70;
+     @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground bg-muted border border-border/70;
+   }
+
+   .eyebrow::before {
+     content: '';
+     display: inline-block;
+     width: 5px;
+     height: 5px;
+     border-radius: 50%;
+     background: hsl(var(--primary));
+     flex-shrink: 0;
    }
 
    .section-divider {
-     @apply w-12 h-px bg-foreground/20 mx-auto;
+     @apply w-16 h-px mx-auto;
+     background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.45), transparent);
    }
 
   /* Navbar — premium glass transition between themes */

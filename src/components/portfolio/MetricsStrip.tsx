@@ -40,10 +40,11 @@ function AnimatedStat({ stat, active }: { stat: (typeof STATS)[0]; active: boole
         className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         aria-hidden="true"
       />
-      <div className="text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-primary tabular-nums">
+      <div className="text-3xl md:text-4xl font-bold tracking-[-0.02em] text-primary tabular-nums">
         {active ? display : stat.value}
       </div>
-      <div className="mt-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="w-6 h-[2px] rounded-full bg-gradient-to-r from-primary/60 to-transparent mx-auto my-2" aria-hidden="true" />
+      <div className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
         {stat.label}
       </div>
     </div>
