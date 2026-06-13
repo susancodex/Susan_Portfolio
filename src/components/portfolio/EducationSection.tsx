@@ -56,9 +56,6 @@ export default function EducationSection() {
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
                     Final Year
                   </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-muted text-[11px] font-medium text-muted-foreground border border-border/70">
-                    2022 – Present
-                  </span>
                 </CardDescription>
               </div>
             </div>
