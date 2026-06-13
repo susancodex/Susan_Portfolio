@@ -331,6 +331,12 @@
   
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-[hsl(var(--gradient-middle))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-text 4s ease infinite;
+  }
+
+  .social-icon {
+    @apply flex items-center justify-center p-2.5 rounded-xl border border-border/70 bg-background/70 backdrop-blur-sm text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-muted/60 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300;
   }
   
    .hero-gradient {

@@ -1,4 +1,6 @@
 import PortfolioNav from "@/components/portfolio/PortfolioNav";
+import ScrollProgress from "@/components/portfolio/ScrollProgress";
+import BackToTop from "@/components/portfolio/BackToTop";
 import HeroSection from "@/components/portfolio/HeroSection";
 import MetricsStrip from "@/components/portfolio/MetricsStrip";
 import TechStackStrip from "@/components/portfolio/TechStackStrip";
@@ -30,6 +32,8 @@ export default function Index() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/60 to-transparent" />
       </div>
 
+      <ScrollProgress />
+      <BackToTop />
       <PortfolioNav />
 
       <main>
@@ -39,9 +43,7 @@ export default function Index() {
 
         <section id="about" className="py-20 md:py-28 bg-background/60 backdrop-blur-sm border-y border-border/40 relative z-10">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <AboutSection />
-            </div>
+            <AboutSection />
           </div>
         </section>
 
