@@ -1,19 +1,19 @@
-
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Apartments from "./pages/Apartments";
-import BookingPage from "./pages/BookingPage";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
-import Amenities from "./pages/Amenities";
-import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
-// Create a react-query client
+const Index = lazy(() => import("./pages/Index"));
+const Apartments = lazy(() => import("./pages/Apartments"));
+const BookingPage = lazy(() => import("./pages/BookingPage"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Amenities = lazy(() => import("./pages/Amenities"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -22,17 +22,20 @@ const App = () => (
       <LanguageProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/apartments" element={<Apartments />} />
-            <Route path="/booking" element={<BookingPage />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/amenities" element={<Amenities />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+        <BrowserRouter
+          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+        >
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/apartments" element={<Apartments />} />
+              <Route path="/booking" element={<BookingPage />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/amenities" element={<Amenities />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>

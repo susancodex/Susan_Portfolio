@@ -1,0 +1,2 @@
+- [Portfolio architecture](portfolio-arch.md) — portfolio (Index.tsx) and MareSereno hotel demo share one repo; keep them fully isolated.
+- [useScrollAnimation generics](scroll-animation.md) — hook is generic `<T extends Element>` so call sites use typed refs without `as any`.
