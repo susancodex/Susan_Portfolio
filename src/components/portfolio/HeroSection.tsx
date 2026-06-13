@@ -113,7 +113,7 @@ export default function HeroSection() {
           }`}
         >
           <p className="text-sm md:text-base font-medium text-muted-foreground tracking-wide">
-            Full Stack Engineer&nbsp;·&nbsp;React&nbsp;·&nbsp;Django&nbsp;·&nbsp;Django REST
+            Full Stack Engineer&nbsp;·&nbsp;React&nbsp;·&nbsp;Django&nbsp;·&nbsp;DRF
           </p>
         </div>
 
