@@ -1,0 +1,276 @@
+You are a Senior SEO Engineer, Technical SEO Consultant, Performance Optimization Expert, and Personal Branding Specialist.
+
+My goal is to transform my portfolio website into a professional, enterprise-grade personal brand website that ranks highly for searches related to my name: "Susan Acharya".
+
+Website Details:
+
+* Domain: susanacharya1.com.np
+* Purpose: Personal portfolio, professional profile, projects, blog, and personal brand.
+* Audience: Recruiters, internship providers, employers, universities, collaborators, and search engines.
+* Primary keyword: Susan Acharya
+* Secondary keywords:
+
+  * Susan Acharya Nepal
+  * Susan Acharya Portfolio
+  * Susan Acharya Developer
+  * Susan Acharya Computer Science Student
+  * Susan Acharya Django Developer
+  * Susan Acharya BSc CSIT
+
+Your task is to audit and improve the entire website.
+
+========================
+
+1. TECHNICAL SEO
+   ========================
+
+Implement:
+
+* Proper title tags for every page.
+* Meta descriptions for every page.
+* Canonical URLs.
+* Open Graph tags.
+* Twitter/X cards.
+* robots.txt
+* sitemap.xml
+* schema.org structured data.
+* Breadcrumb schema where applicable.
+* Person schema for Susan Acharya.
+* Website schema.
+* Organization schema if appropriate.
+* FAQ schema where useful.
+* Article schema for blog posts.
+
+Ensure:
+
+* No duplicate metadata.
+* No duplicate titles.
+* No missing alt tags.
+* Proper heading hierarchy (H1, H2, H3).
+* Semantic HTML5 structure.
+
+========================
+2. PERSONAL BRAND SEO
+=====================
+
+Create a strong personal identity profile.
+
+Include:
+
+* Professional About section.
+* Career summary.
+* Education details.
+* Technical skills.
+* Certifications.
+* Projects.
+* Hackathons.
+* Leadership activities.
+* Contact information.
+* Social profiles.
+
+Create a dedicated page:
+
+/about-susan-acharya
+
+Target searches:
+
+* Who is Susan Acharya
+* Susan Acharya Nepal
+* Susan Acharya Portfolio
+* Susan Acharya Developer
+
+The page should be SEO optimized and written professionally.
+
+========================
+3. CONTENT STRATEGY
+===================
+
+Create a professional blog system.
+
+Generate SEO-ready article templates for:
+
+* Django Development
+* Python Programming
+* Web Development
+* Data Mining
+* Database Systems
+* Java
+* PostgreSQL
+* Git & GitHub
+* BSc CSIT Notes
+* Software Engineering
+
+Each blog page should include:
+
+* SEO title
+* Meta description
+* Schema markup
+* Table of contents
+* Internal linking
+* Related posts
+
+========================
+4. PERFORMANCE OPTIMIZATION
+===========================
+
+Target Lighthouse scores:
+
+* Performance: 95+
+* Accessibility: 100
+* Best Practices: 100
+* SEO: 100
+
+Improve:
+
+Largest Contentful Paint (LCP)
+Target: < 2.5s
+
+First Contentful Paint (FCP)
+Target: < 1.8s
+
+Speed Index
+Target: < 2.5s
+
+Implement:
+
+* Image optimization
+* WebP images
+* Lazy loading
+* Font optimization
+* CSS optimization
+* JavaScript optimization
+* Code splitting
+* Tree shaking
+* Compression
+* Browser caching
+* Asset minification
+* Critical CSS
+* Preloading important assets
+* Prefetching strategic resources
+
+Remove:
+
+* Unused CSS
+* Unused JavaScript
+* Render-blocking resources
+
+========================
+5. ACCESSIBILITY
+================
+
+Achieve Lighthouse Accessibility score 100.
+
+Ensure:
+
+* Proper color contrast
+* Keyboard navigation
+* ARIA labels
+* Accessible forms
+* Accessible buttons
+* Accessible images
+* Screen reader compatibility
+
+========================
+6. PROFESSIONAL UI/UX
+=====================
+
+Redesign the portfolio to look modern and premium.
+
+Style inspiration:
+
+* Clean
+* Minimal
+* Professional
+* Recruiter-friendly
+* Fast loading
+* Mobile-first
+
+Sections:
+
+Hero
+About
+Skills
+Projects
+Experience
+Education
+Achievements
+Blog
+Contact
+
+Add:
+
+* Smooth animations
+* Professional typography
+* Responsive design
+* Dark mode
+* Mobile optimization
+
+Animations must not reduce performance.
+
+========================
+7. SEARCH ENGINE INDEXING
+=========================
+
+Verify and optimize:
+
+* Google indexing readiness
+* Bing indexing readiness
+* AI search readiness
+
+Ensure the site is easily discoverable by:
+
+* Google Search
+* ChatGPT
+* Gemini
+* Perplexity
+* Claude
+* Bing
+
+========================
+8. AUTHORITY BUILDING
+=====================
+
+Create an authority strategy.
+
+Add sections for:
+
+* Publications
+* Articles
+* Projects
+* Open-source contributions
+* GitHub activity
+* Technical writing
+
+Design internal linking structure to increase topical authority.
+
+========================
+9. SOCIAL INTEGRATION
+=====================
+
+Integrate:
+
+* LinkedIn
+* GitHub
+* Email
+* Resume download
+
+Use structured data to connect all profiles.
+
+========================
+10. DELIVERABLES
+================
+
+Provide:
+
+1. Complete code improvements.
+2. Improved metadata.
+3. Structured data implementation.
+4. Performance improvements.
+5. SEO improvements.
+6. Content recommendations.
+7. Missing-page recommendations.
+8. Detailed explanation of every change.
+9. Before/after comparison.
+10. Final SEO checklist.
+
+The final result should be a production-ready, professional portfolio website optimized for ranking, personal branding, recruiter visibility, AI search discoverability, indexing, and long-term growth of the Susan Acharya personal brand.
