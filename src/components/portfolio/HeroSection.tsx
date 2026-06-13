@@ -154,7 +154,7 @@ export default function HeroSection() {
           }`}
         >
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            A motivated Full Stack Developer and final-year{" "}
+            A motivated Full Stack Developer and{" "}
             <strong className="text-foreground font-medium">BSc. CSIT student</strong> from{" "}
             <strong className="text-foreground font-medium">Tribhuvan University, Nepal</strong> — building scalable web applications with{" "}
             Django REST Framework and React, with a focus on clean architecture and thoughtful user experience.
