@@ -109,7 +109,7 @@ export default function PortfolioNav() {
                 Susan Acharya
               </span>
               <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                Frontend Developer
+                Full Stack Engineer
               </span>
             </span>
           </button>
