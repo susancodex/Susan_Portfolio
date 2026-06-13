@@ -47,8 +47,7 @@ export default function AboutSection() {
           titleVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
         }`}
       >
-        Crafting reliable software,{" "}
-        <span className="gradient-text">one commit at a time.</span>
+        Crafting reliable software, one commit at a time.
       </h2>
 
       <div className="section-divider mb-8" aria-hidden="true" />
