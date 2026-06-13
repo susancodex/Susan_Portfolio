@@ -121,9 +121,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Concepts",
     skills: [
-      { name: "Software Requirements Analysis", icon: "📝" },
-      { name: "Unit Testing", icon: "✅" },
-      { name: "System Design Basics", icon: "🏗️" },
+      { name: "Software Requirements Analysis", icon: "📋" },
+      { name: "Unit Testing", icon: "🧪" },
+      { name: "System Design Basics", icon: "🧩" },
     ],
   },
   {
@@ -140,11 +140,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Soft Skills",
     skills: [
-      { name: "Analytical Thinking", icon: "🧠" },
-      { name: "Problem-solving", icon: "🎯" },
-      { name: "Teamwork", icon: "🤝" },
-      { name: "Communication", icon: "🗣️" },
-      { name: "Adaptability", icon: "🔄" },
+      { name: "Analytical Thinking", icon: "🔍" },
+      { name: "Problem-solving", icon: "💡" },
+      { name: "Teamwork", icon: "👥" },
+      { name: "Communication", icon: "💬" },
+      { name: "Adaptability", icon: "🦋" },
     ],
   },
 ];

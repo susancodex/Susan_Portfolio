@@ -5,32 +5,32 @@ const CATEGORY_META: Record<string, { accent: string; bar: string; emoji: string
   "Programming & Frontend": {
     accent: "group-hover:border-blue-400/50",
     bar: "from-blue-400 to-cyan-400",
-    emoji: "⚡",
+    emoji: "💻",
   },
   "Backend": {
     accent: "group-hover:border-emerald-400/50",
     bar: "from-emerald-400 to-teal-400",
-    emoji: "🛠️",
+    emoji: "⚙️",
   },
   "Databases": {
     accent: "group-hover:border-violet-400/50",
     bar: "from-violet-400 to-purple-400",
-    emoji: "🗄️",
+    emoji: "🗃️",
   },
   "Concepts": {
     accent: "group-hover:border-amber-400/50",
     bar: "from-amber-400 to-orange-400",
-    emoji: "💡",
+    emoji: "📐",
   },
   "Tools": {
     accent: "group-hover:border-cyan-400/50",
     bar: "from-cyan-400 to-sky-400",
-    emoji: "🔧",
+    emoji: "🛠️",
   },
   "Soft Skills": {
     accent: "group-hover:border-pink-400/50",
     bar: "from-pink-400 to-rose-400",
-    emoji: "🌟",
+    emoji: "💫",
   },
 };
 
