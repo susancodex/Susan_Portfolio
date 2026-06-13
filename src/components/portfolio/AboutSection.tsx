@@ -81,9 +81,9 @@ export default function AboutSection() {
           textVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-8"
         }`}
       >
-        Currently pursuing a Bachelor's degree in BSc. CSIT at Tribhuvan University and
-        seeking opportunities to contribute, learn, and grow as a developer — ideally in a
-        team that values craftsmanship and code quality.
+        Final year BSc. CSIT student at Tribhuvan University, seeking opportunities to
+        contribute, learn, and grow as a developer — ideally in a team that values
+        craftsmanship and code quality.
       </p>
 
       {/* Highlight cards — 4-column centered grid */}
