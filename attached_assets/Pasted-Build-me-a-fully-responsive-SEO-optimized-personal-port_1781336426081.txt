@@ -1,0 +1,82 @@
+Build me a fully responsive, SEO-optimized personal portfolio website for:
+
+NAME: Susan Acharya
+ROLE: Frontend Developer / Computer Science Student (Nepal)
+
+PRIMARY GOAL:
+The website must rank on Google when someone searches:
+- "Susan Acharya"
+- "Susan Acharya portfolio"
+- "Frontend developer Nepal"
+- "React developer Nepal"
+
+TECH STACK:
+- Use React + Vite (or Next.js if better for SEO)
+- Clean modern UI (minimal + professional)
+- Fully responsive (mobile + desktop)
+- Deployable on Vercel
+
+PAGES:
+1. Home
+2. About
+3. Projects
+4. Skills
+5. Contact
+
+SEO REQUIREMENTS (VERY IMPORTANT):
+- Add proper <title> and meta description for every page
+- Use correct heading structure (H1, H2, H3)
+- H1 on homepage must be: "Susan Acharya"
+- Add Open Graph tags for social sharing
+- Add Twitter Card meta tags
+- Add sitemap.xml generation
+- Add robots.txt file
+- Ensure clean URLs (no hash routing if possible)
+- Use semantic HTML (header, section, article, footer)
+- Optimize for Google indexing
+
+HOME PAGE CONTENT:
+- Hero section:
+  "Susan Acharya"
+  "Frontend Developer | React | Vite | JavaScript"
+  Button: View Projects / Contact Me
+
+- About section:
+  Short professional bio (CS student in Nepal, interested in frontend, React, UI/UX)
+
+- Projects section:
+  Show 3–6 sample projects with cards (title, description, tech stack, GitHub link)
+
+- Skills section:
+  React, JavaScript, HTML, CSS, Tailwind, Git, Vite
+
+- Contact section:
+  Email form + social links (GitHub, LinkedIn)
+
+DESIGN:
+- Clean modern UI (Apple/Notion style preferred)
+- Light theme with good spacing
+- Smooth scroll animations (subtle)
+- Professional typography
+
+PERFORMANCE:
+- Optimize for Lighthouse score 90+
+- Lazy load images
+- No heavy libraries
+
+DEPLOYMENT READY:
+- Must work on Vercel without errors
+- Include proper build scripts
+- Ensure no broken imports
+
+BONUS (IMPORTANT FOR SEO):
+- Add structured data (JSON-LD schema for Person):
+  name: Susan Acharya
+  job: Frontend Developer
+  location: Nepal
+
+- Add favicon and profile image placeholder
+- Add OG image for sharing preview
+
+OUTPUT:
+Give full project structure + complete code files ready to run.

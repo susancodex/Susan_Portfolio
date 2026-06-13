@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { ChevronDown, Mail, MapPin, Download, ArrowRight } from "lucide-react";
+import { ChevronDown, Mail, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll";
 import { SOCIAL_LINKS } from "@/constants/portfolio";
 
 const ROLES = [
-  "Full Stack Developer",
+  "Frontend Developer",
+  "React Developer",
   "Computer Science Student",
-  "Django REST Expert",
-  "React Engineer",
+  "Full Stack Developer",
 ];
 
 function useRoleCycler(roles: string[], intervalMs = 2600) {
@@ -105,9 +105,20 @@ export default function HeroSection() {
           <span className="text-foreground font-bold">Susan Acharya</span>
         </h1>
 
+        {/* Static tagline */}
+        <div
+          className={`mb-2 transition-all duration-700 [transition-delay:280ms] ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <p className="text-sm md:text-base font-medium text-muted-foreground tracking-wide">
+            Frontend Developer&nbsp;·&nbsp;React&nbsp;·&nbsp;Vite&nbsp;·&nbsp;JavaScript
+          </p>
+        </div>
+
         {/* Rotating role */}
         <div
-          className={`h-8 mb-5 flex items-center justify-center transition-all duration-700 [transition-delay:300ms] ${
+          className={`h-8 mb-5 flex items-center justify-center transition-all duration-700 [transition-delay:320ms] ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -162,7 +173,7 @@ export default function HeroSection() {
             size="lg"
             className="btn-primary group"
           >
-            View My Work
+            View Projects
             <ArrowRight
               className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               aria-hidden="true"
@@ -171,16 +182,11 @@ export default function HeroSection() {
           <Button
             variant="outline"
             size="lg"
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1qv1Ax8rl2FfuTZMncyP7CHbPUFV688YU/view?usp=sharing",
-                "_blank"
-              )
-            }
+            onClick={() => scrollToSection("contact")}
             className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300"
           >
-            <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-            Download CV
+            <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
+            Contact Me
           </Button>
         </div>
 
