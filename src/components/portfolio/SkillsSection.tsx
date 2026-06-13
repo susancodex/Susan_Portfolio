@@ -105,7 +105,7 @@ export default function SkillsSection() {
                     key={skill.name}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/60 border border-border/50 hover:border-border hover:bg-muted transition-all duration-200 group/chip cursor-default"
                   >
-                    {skill.icon.startsWith("http") ? (
+                    {skill.icon.startsWith("http") && (
                       <img
                         src={skill.icon}
                         alt=""
@@ -115,10 +115,6 @@ export default function SkillsSection() {
                           (e.currentTarget as HTMLImageElement).style.display = "none";
                         }}
                       />
-                    ) : (
-                      <span className="text-sm leading-none flex-shrink-0" aria-hidden="true">
-                        {skill.icon}
-                      </span>
                     )}
                     <span className="text-xs font-medium text-foreground/85 group-hover/chip:text-foreground transition-colors whitespace-nowrap">
                       {skill.name}
