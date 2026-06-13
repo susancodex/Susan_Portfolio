@@ -70,11 +70,13 @@ export default function HeroSection() {
             <div className="relative w-full h-full rounded-full overflow-hidden shadow-[var(--shadow-lg)]">
               <img
                 src="/profile.png"
-                alt="Susan Acharya profile photo"
+                alt="Susan Acharya — Full Stack Developer and BSc CSIT student from Kathmandu, Nepal"
                 className="w-full h-full object-cover"
                 width={192}
                 height={192}
                 loading="eager"
+                fetchPriority="high"
+                decoding="sync"
               />
             </div>
           </div>
