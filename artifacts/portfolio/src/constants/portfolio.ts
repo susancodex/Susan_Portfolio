@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
       "A full-stack personal finance management web application built with React + Vite (frontend) and Django REST Framework (backend). Track income and expenses, manage categories, set monthly budget limits, and work toward financial goals — all from a clean, mobile-friendly interface.",
     github: "https://github.com/susancodex/Finance_Tracker.git",
     liveDemo: "https://finance-tracker-frontend-zeid.onrender.com",
-    demoVideo: "https://www.youtube.com/embed/R_wUYhudGAs",
+    demoVideo: "https://www.youtube.com/embed/zWdMOG_oYuU",
     tags: ["React", "Vite", "Django REST", "Full-Stack"],
   },
   {
