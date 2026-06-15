@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   github: string;
   liveDemo: string | null;
+  demoVideo?: string;
   tags: string[];
 }
 

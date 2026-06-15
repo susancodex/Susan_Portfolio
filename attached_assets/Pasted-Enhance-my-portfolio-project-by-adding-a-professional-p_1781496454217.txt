@@ -1,0 +1,57 @@
+Enhance my portfolio project by adding a professional project demo video system.
+
+Requirements:
+
+1. Add a new "Watch Demo" button alongside the existing "Live Demo" and "GitHub" buttons for every project card.
+
+2. When the user clicks "Watch Demo", open a modern responsive modal popup instead of redirecting to another page.
+
+3. Embed a YouTube video inside the modal using an iframe.
+
+4. The modal should:
+   - Open with a smooth animation.
+   - Have a dark semi-transparent backdrop.
+   - Be centered on the screen.
+   - Include a close (X) button.
+   - Close when clicking outside the modal.
+   - Close when pressing the Escape key.
+   - Be fully responsive on desktop, tablet, and mobile devices.
+
+5. Store the video URL for each project in the project data structure so every project can have its own demo video.
+
+Example project data:
+
+{
+  title: "Project Name",
+  github: "...",
+  liveDemo: "...",
+  demoVideo: "https://www.youtube.com/embed/VIDEO_ID"
+}
+
+6. Maintain the existing design system, colors, typography, spacing, animations, and responsiveness of the portfolio.
+
+7. Add hover effects and micro-interactions to the new Watch Demo button consistent with the rest of the portfolio.
+
+8. Ensure accessibility:
+   - Proper ARIA labels.
+   - Keyboard navigation support.
+   - Focus trapping inside the modal.
+   - Screen-reader friendly implementation.
+
+9. Optimize performance:
+   - Lazy load the iframe only when the modal opens.
+   - Prevent unnecessary re-renders.
+   - Clean up event listeners properly.
+
+10. The implementation should be production-ready, cleanly structured, reusable, and follow modern React/Next.js best practices.
+
+11. Keep all existing functionality working exactly as before.
+
+12. After implementation, provide:
+   - The modified files.
+   - Explanation of changes.
+   - Any new components created.
+   - Instructions for adding future project demo videos.
+
+Goal:
+Create a polished, recruiter-friendly portfolio experience where visitors can view Live Demo, GitHub Repository, and Watch Demo Video directly from each project card without leaving the website.
