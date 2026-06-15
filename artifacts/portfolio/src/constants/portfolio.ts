@@ -49,7 +49,6 @@ export const PROJECTS: Project[] = [
       "A modern full-stack educational platform designed to boost student productivity and learning. Integrates AI-powered tutoring, personalised study planning, intelligent note management, flashcard generation, quiz creation, revision scheduling, and learning analytics into a single application. Built with React, Vite, TypeScript, Django REST Framework, and PostgreSQL — emphasising clean architecture, scalability, responsive design, and secure AI integration.",
     github: "https://github.com/susancodex/BrainPilot-AI.git",
     liveDemo: "https://github.com/susancodex/BrainPilot-AI.git",
-    demoVideo: "https://www.youtube.com/embed/R_wUYhudGAs",
     tags: ["React", "Vite", "TypeScript", "Django REST", "PostgreSQL", "AI"],
   },
   {
