@@ -1,11 +1,22 @@
+import { useState, useCallback } from "react";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, PlayCircle } from "lucide-react";
 import { PROJECTS } from "@/constants/portfolio";
+import VideoModal from "@/components/portfolio/VideoModal";
 
 export default function ProjectsSection() {
+  const [activeVideo, setActiveVideo] = useState<{ url: string; title: string } | null>(null);
   const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>({ threshold: 0.3 });
   const [containerRef, visibleItems] = useStaggerAnimation(PROJECTS.length, 180);
+
+  const openVideo = useCallback((url: string, title: string) => {
+    setActiveVideo({ url, title });
+  }, []);
+
+  const closeVideo = useCallback(() => {
+    setActiveVideo(null);
+  }, []);
 
   return (
     <>
@@ -74,6 +85,19 @@ export default function ProjectsSection() {
                     Live
                   </span>
                 )}
+                {/* Watch Demo overlay on image */}
+                {project.demoVideo && (
+                  <button
+                    onClick={() => openVideo(project.demoVideo!, project.title)}
+                    aria-label={`Watch demo video for ${project.title}`}
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30"
+                  >
+                    <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 text-black text-xs font-semibold shadow-lg hover:bg-white transition-colors duration-200">
+                      <PlayCircle className="h-4 w-4 text-primary" aria-hidden="true" />
+                      Watch Demo
+                    </span>
+                  </button>
+                )}
               </div>
 
               {/* Content */}
@@ -141,12 +165,33 @@ export default function ProjectsSection() {
                     <Github className="h-3.5 w-3.5 mr-1.5" aria-hidden="true" />
                     Source Code
                   </Button>
+                  {project.demoVideo && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="!px-4 !py-2 !text-xs rounded-lg border-primary/30 text-primary hover:bg-primary/8 hover:border-primary/60 transition-all duration-200 flex-1 sm:flex-none group/watch"
+                      onClick={() => openVideo(project.demoVideo!, project.title)}
+                      aria-label={`Watch demo video for ${project.title}`}
+                    >
+                      <PlayCircle className="h-3.5 w-3.5 mr-1.5 group-hover/watch:scale-110 transition-transform duration-200" aria-hidden="true" />
+                      Watch Demo
+                    </Button>
+                  )}
                 </div>
               </div>
             </article>
           );
         })}
       </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <VideoModal
+          videoUrl={activeVideo.url}
+          title={activeVideo.title}
+          onClose={closeVideo}
+        />
+      )}
     </>
   );
 }
