@@ -194,7 +194,7 @@ export const CERTIFICATES: Certificate[] = [
     linkLabel: "View Certificate",
   },
   {
-    issuer: "Code Yantra",
+    issuer: "Code Yatra",
     index: "04",
     title: "Hackathon Participation",
     description:
