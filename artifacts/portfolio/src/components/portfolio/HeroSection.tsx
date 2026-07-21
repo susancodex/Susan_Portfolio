@@ -183,7 +183,7 @@ export default function HeroSection() {
           <Button
             variant="outline"
             size="lg"
-            onClick={() => window.open("/resume.pdf", "_blank")}
+            onClick={() => window.open("https://drive.google.com/uc?export=download&id=18hT3YgEHdM-6HRxe0UetsWZep0yzG-Ik", "_blank")}
             className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300"
           >
             <Download className="mr-2 h-4 w-4" aria-hidden="true" />
