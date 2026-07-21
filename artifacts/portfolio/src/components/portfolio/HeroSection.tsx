@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronDown, Mail, MapPin, ArrowRight } from "lucide-react";
+import { ChevronDown, Mail, MapPin, ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll";
 import { SOCIAL_LINKS } from "@/constants/portfolio";
@@ -179,6 +179,15 @@ export default function HeroSection() {
               className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               aria-hidden="true"
             />
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => window.open("/resume.pdf", "_blank")}
+            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300"
+          >
+            <Download className="mr-2 h-4 w-4" aria-hidden="true" />
+            Download Resume
           </Button>
           <Button
             variant="outline"

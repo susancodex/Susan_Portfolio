@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ArrowUpRight, PlayCircle } from "lucide-react";
@@ -7,8 +7,25 @@ import VideoModal from "@/components/portfolio/VideoModal";
 
 export default function ProjectsSection() {
   const [activeVideo, setActiveVideo] = useState<{ url: string; title: string } | null>(null);
+  const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>({ threshold: 0.3 });
-  const [containerRef, visibleItems] = useStaggerAnimation(PROJECTS.length, 180);
+  
+  // Extract unique technologies from all projects
+  const allTechnologies = useMemo(() => {
+    const techSet = new Set<string>();
+    PROJECTS.forEach(project => {
+      project.tags.forEach(tag => techSet.add(tag));
+    });
+    return ["All", ...Array.from(techSet).sort()];
+  }, []);
+
+  // Filter projects based on selected technology
+  const filteredProjects = useMemo(() => {
+    if (selectedFilter === "All") return PROJECTS;
+    return PROJECTS.filter(project => project.tags.includes(selectedFilter));
+  }, [selectedFilter]);
+
+  const [containerRef, visibleItems] = useStaggerAnimation(filteredProjects.length, 180);
 
   const openVideo = useCallback((url: string, title: string) => {
     setActiveVideo({ url, title });
@@ -35,13 +52,30 @@ export default function ProjectsSection() {
       >
         Featured Projects
       </h2>
-      <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-14">
+      <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
         A selection of full-stack and backend projects demonstrating clean architecture, REST
         API design, and production-ready UX.
       </p>
 
+      {/* Filter buttons */}
+      <div className="flex flex-wrap justify-center gap-2 mb-10 max-w-4xl mx-auto">
+        {allTechnologies.map((tech) => (
+          <button
+            key={tech}
+            onClick={() => setSelectedFilter(tech)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              selectedFilter === tech
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/50"
+            }`}
+          >
+            {tech}
+          </button>
+        ))}
+      </div>
+
       <div ref={containerRef} className="space-y-6 max-w-6xl mx-auto">
-        {PROJECTS.map((project, index) => {
+        {filteredProjects.map((project, index) => {
           const isReversed = index % 2 === 1;
           return (
             <article
