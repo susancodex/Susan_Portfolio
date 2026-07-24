@@ -98,12 +98,12 @@ export default function AboutSection() {
       {/* Highlight cards — 4-column centered grid */}
       <div
         ref={cardsRef}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
       >
         {HIGHLIGHTS.map(({ icon: Icon, label, desc, iconClass, hoverIconClass, glowClass }, i) => (
           <div
             key={label}
-            className={`group relative p-5 rounded-2xl border border-border/70 bg-background/60 backdrop-blur-sm hover:border-border hover:bg-muted/30 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-md)] overflow-hidden ${
+            className={`group relative p-4 sm:p-5 rounded-2xl border border-border/70 bg-background/60 backdrop-blur-sm hover:border-border hover:bg-muted/30 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-md)] overflow-hidden ${
               visibleItems[i] ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-6"
             }`}
           >

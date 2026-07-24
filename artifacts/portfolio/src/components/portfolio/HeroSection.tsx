@@ -50,35 +50,35 @@ export default function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-8">
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-8">
             {/* Floating bubbles */}
             <div
-              className="absolute -top-8 -left-8 w-6 h-6 rounded-full bg-primary/30 animate-float"
+              className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-primary/30 animate-float"
               style={{ animationDelay: '0s' }}
               aria-hidden="true"
             />
             <div
-              className="absolute -top-4 -right-12 w-4 h-4 rounded-full bg-[hsl(var(--accent-cyan))]/40 animate-float"
+              className="absolute -top-3 -right-8 sm:-top-4 sm:-right-12 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[hsl(var(--accent-cyan))]/40 animate-float"
               style={{ animationDelay: '0.5s' }}
               aria-hidden="true"
             />
             <div
-              className="absolute top-1/2 -left-16 w-5 h-5 rounded-full bg-[hsl(var(--accent-purple))]/35 animate-float"
+              className="absolute top-1/2 -left-10 sm:-left-16 w-3 h-3 sm:w-5 sm:h-5 rounded-full bg-[hsl(var(--accent-purple))]/35 animate-float hidden sm:block"
               style={{ animationDelay: '1s' }}
               aria-hidden="true"
             />
             <div
-              className="absolute -bottom-6 -right-8 w-7 h-7 rounded-full bg-primary/25 animate-float"
+              className="absolute -bottom-4 -right-6 sm:-bottom-6 sm:-right-8 w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-primary/25 animate-float"
               style={{ animationDelay: '1.5s' }}
               aria-hidden="true"
             />
             <div
-              className="absolute bottom-1/4 -left-10 w-3 h-3 rounded-full bg-[hsl(var(--accent-cyan))]/30 animate-float"
+              className="absolute bottom-1/4 -left-6 sm:-left-10 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[hsl(var(--accent-cyan))]/30 animate-float hidden sm:block"
               style={{ animationDelay: '2s' }}
               aria-hidden="true"
             />
             <div
-              className="absolute -bottom-4 left-1/4 w-4 h-4 rounded-full bg-[hsl(var(--accent-purple))]/25 animate-float"
+              className="absolute -bottom-3 left-1/4 sm:-bottom-4 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[hsl(var(--accent-purple))]/25 animate-float"
               style={{ animationDelay: '2.5s' }}
               aria-hidden="true"
             />
@@ -197,14 +197,14 @@ export default function HeroSection() {
 
         {/* CTA buttons */}
         <div
-          className={`flex flex-wrap justify-center gap-3 mb-8 transition-all duration-1000 [transition-delay:540ms] ${
+          className={`flex flex-col sm:flex-row flex-wrap justify-center gap-3 mb-8 transition-all duration-1000 [transition-delay:540ms] ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <Button
             onClick={() => scrollToSection("projects")}
             size="lg"
-            className="btn-primary group"
+            className="btn-primary group w-full sm:w-auto"
           >
             View Projects
             <ArrowRight
@@ -216,7 +216,7 @@ export default function HeroSection() {
             variant="outline"
             size="lg"
             onClick={() => window.open("https://drive.google.com/file/d/18hT3YgEHdM-6HRxe0UetsWZep0yzG-Ik/view?usp=sharing", "_blank")}
-            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300"
+            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300 w-full sm:w-auto"
           >
             <Eye className="mr-2 h-4 w-4" aria-hidden="true" />
             View Resume
@@ -225,7 +225,7 @@ export default function HeroSection() {
             variant="outline"
             size="lg"
             onClick={() => window.open("https://drive.google.com/uc?export=download&id=18hT3YgEHdM-6HRxe0UetsWZep0yzG-Ik", "_blank")}
-            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300"
+            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300 w-full sm:w-auto"
           >
             <Download className="mr-2 h-4 w-4" aria-hidden="true" />
             Download Resume
@@ -234,7 +234,7 @@ export default function HeroSection() {
             variant="outline"
             size="lg"
             onClick={() => scrollToSection("contact")}
-            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300"
+            className="rounded-xl border-border/80 hover:border-foreground/30 hover:bg-muted/60 transition-all duration-300 w-full sm:w-auto"
           >
             <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
             Contact Me

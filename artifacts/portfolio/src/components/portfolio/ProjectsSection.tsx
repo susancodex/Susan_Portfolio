@@ -58,12 +58,12 @@ export default function ProjectsSection() {
       </p>
 
       {/* Filter buttons */}
-      <div className="flex flex-wrap justify-center gap-2 mb-10 max-w-4xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-10 max-w-4xl mx-auto">
         {allTechnologies.map((tech) => (
           <button
             key={tech}
             onClick={() => setSelectedFilter(tech)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+            className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
               selectedFilter === tech
                 ? "bg-primary text-primary-foreground shadow-md"
                 : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/50"
@@ -94,7 +94,7 @@ export default function ProjectsSection() {
 
               {/* Image */}
               <div
-                className={`relative overflow-hidden h-52 md:h-auto md:min-h-[300px] bg-muted ${
+                className={`relative overflow-hidden h-48 sm:h-52 md:h-auto md:min-h-[300px] bg-muted ${
                   isReversed ? "md:order-2" : ""
                 }`}
               >
@@ -135,7 +135,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+              <div className="flex flex-col justify-center p-4 sm:p-6 md:p-8 lg:p-10">
                 {/* Category line */}
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -172,7 +172,7 @@ export default function ProjectsSection() {
                   {project.liveDemo ? (
                     <Button
                       size="sm"
-                      className="btn-primary !px-4 !py-2 !text-xs group/btn flex-1 sm:flex-none"
+                      className="btn-primary !px-3 !py-2 !text-xs sm:!px-4 sm:!py-2 group/btn flex-1 sm:flex-none"
                       onClick={() => window.open(project.liveDemo!, "_blank")}
                     >
                       <ExternalLink className="h-3.5 w-3.5 mr-1.5" aria-hidden="true" />
@@ -184,7 +184,7 @@ export default function ProjectsSection() {
                       size="sm"
                       disabled
                       variant="secondary"
-                      className="!px-4 !py-2 !text-xs rounded-lg opacity-60 cursor-not-allowed flex-1 sm:flex-none"
+                      className="!px-3 !py-2 !text-xs sm:!px-4 sm:!py-2 rounded-lg opacity-60 cursor-not-allowed flex-1 sm:flex-none"
                     >
                       Coming Soon
                     </Button>
@@ -192,7 +192,7 @@ export default function ProjectsSection() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="!px-4 !py-2 !text-xs rounded-lg border-border hover:border-foreground/30 hover:bg-muted transition-all duration-200 flex-1 sm:flex-none"
+                    className="!px-3 !py-2 !text-xs sm:!px-4 sm:!py-2 rounded-lg border-border hover:border-foreground/30 hover:bg-muted transition-all duration-200 flex-1 sm:flex-none"
                     onClick={() => window.open(project.github, "_blank")}
                     aria-label={`View ${project.title} on GitHub`}
                   >
@@ -203,7 +203,7 @@ export default function ProjectsSection() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="!px-4 !py-2 !text-xs rounded-lg border-primary/30 text-primary hover:bg-primary/8 hover:border-primary/60 transition-all duration-200 flex-1 sm:flex-none group/watch"
+                      className="!px-3 !py-2 !text-xs sm:!px-4 sm:!py-2 rounded-lg border-primary/30 text-primary hover:bg-primary/8 hover:border-primary/60 transition-all duration-200 flex-1 sm:flex-none group/watch"
                       onClick={() => openVideo(project.demoVideo!, project.title)}
                       aria-label={`Watch demo video for ${project.title}`}
                     >

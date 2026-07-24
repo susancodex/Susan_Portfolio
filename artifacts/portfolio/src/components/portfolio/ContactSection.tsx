@@ -95,7 +95,7 @@ export default function ContactSection() {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto"
       >
         <div
           className={`transition-all duration-700 ${
@@ -114,14 +114,14 @@ export default function ContactSection() {
             {CONTACT_ITEMS.map(({ icon: Icon, label, value, href, iconClass }) => {
               const inner = (
                 <>
-                  <div className={`flex items-center justify-center h-10 w-10 rounded-lg border transition-all duration-300 ${iconClass}`}>
-                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  <div className={`flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 rounded-lg border transition-all duration-300 ${iconClass}`}>
+                    <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       {label}
                     </div>
-                    <div className="text-sm font-medium text-foreground">{value}</div>
+                    <div className="text-xs sm:text-sm font-medium text-foreground">{value}</div>
                   </div>
                 </>
               );
@@ -130,14 +130,14 @@ export default function ContactSection() {
                 <a
                   key={label}
                   href={href}
-                  className="flex items-center gap-4 py-3 border-b border-border/60 last:border-0 group"
+                  className="flex items-center gap-3 sm:gap-4 py-2.5 sm:py-3 border-b border-border/60 last:border-0 group"
                 >
                   {inner}
                 </a>
               ) : (
                 <div
                   key={label}
-                  className="flex items-center gap-4 py-3 border-b border-border/60 last:border-0 group"
+                  className="flex items-center gap-3 sm:gap-4 py-2.5 sm:py-3 border-b border-border/60 last:border-0 group"
                 >
                   {inner}
                 </div>
@@ -159,32 +159,32 @@ export default function ContactSection() {
               I'll get back to you within 24 hours.
             </CardDescription>
           </CardHeader>
-          <CardContent className="pt-6">
-            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <CardContent className="pt-4 sm:pt-6">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4" noValidate>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 <Input
                   placeholder="Name"
                   required
-                  className="h-11 bg-background border-border"
+                  className="h-10 sm:h-11 bg-background border-border"
                   aria-label="Your name"
                 />
                 <Input
                   type="email"
                   placeholder="Email"
                   required
-                  className="h-11 bg-background border-border"
+                  className="h-10 sm:h-11 bg-background border-border"
                   aria-label="Your email"
                 />
               </div>
               <Input
                 placeholder="Subject"
                 required
-                className="h-11 bg-background border-border"
+                className="h-10 sm:h-11 bg-background border-border"
                 aria-label="Message subject"
               />
               <Textarea
                 placeholder="Message"
-                rows={5}
+                rows={4}
                 required
                 className="bg-background border-border resize-none"
                 aria-label="Your message"
